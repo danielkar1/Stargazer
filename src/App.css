@@ -1,33 +1,189 @@
-.App {
-  text-align: center;
+
+*{
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+#universe {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  perspective: 500px;
+  background-size: cover; }
+
+#solar-system{
+position: relative;
+height:50vh;
+width: 50vm;
+perspective: 70em; 
+margin: 25%;
+transform-style: preserve-3d; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#sun{
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  border-radius: 225px;
+  height:50px;
+  width: 50px;
+  margin: -25px 0 0 -25px;
+  background-color: aqua;
+  transform-style: preserve-3d; 
 }
 
-.App-link {
-  color: #61dafb;
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border:2px solid  rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  /* height: 160px;
+  width: 160px; */
+  transform-style: preserve-3d;
+  
+  animation: orbit;
+  animation-iteration-count: infinite; 
+  animation-timing-function: linear; }
+
+   .pos {
+    position: absolute;
+    top: 50%;
+    width: 2em;
+    height: 1em;
+    margin-top: -1em;
+    margin-left: -1em;
+    animation: invert;
+    transform-style: preserve-3d;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; } 
+
+#uranus .pos {
+
+z-index: 1;
+position: absolute;
+color: white;
+left: 0;
+top: 50%;
+/* background: aqua; */
+transform-style: preserve-3d;
+}
+#uranus.orbit {
+width: 10.74176em;
+height: 10.74176em;
+margin-top: -4.5em;
+margin-left: -4.5em;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#earth.orbit {
+width: 20.546em;
+height: 20.5464em;
+margin-top: -9.5em;
+margin-left: -9.5em;
+transform-style: preserve-3d;
+
+}
+
+
+.planet {
+position:absolute;
+margin: -17px;
+border-radius: 50%;
+background-color: #202020;
+background-repeat: no-repeat;
+background-size: cover;
+animation-iteration-count: infinite;
+animation-timing-function: linear; }
+
+#uranus .planet{
+width: 40px;
+height: 40px;
+animation: shadow-uranus linear infinite;
+z-index: 1;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAAGBQTFRFsW89lWA2jVwzsm8+qGo72oVJrW08h1gxlWA15IpMrW09jlw0l2E2nGM3v3ZC3YdK3odKyHtE75BP8JFQ8JFQ8JFQ8JFQ8JFQw3hD8JFQ8JFQ8JFQ8JFQ8JFQ8JFQAAAAe3ooYQAAACB0Uk5Tk0+hrcTz6g7P5tkiYurz49bk79XR3vvm2PH26ezi2QCQ4vSgAAABm0lEQVQoz1VSWXaEMAzLLAw7ZHMSx0vvf8uaTtvX+icQYSRbch/vGrf7ftV0v43fV+59bNP+Oo6jtXAs0/YHWg1o4TxnqyG05bn+QOt0AUIRKWVV39qyvqF1f4VTFSqiZgWuerarz6D7KwyoqkI19k5UFYfjeUHbdJzEkLQS9cLCSELDsX24cVoCVYYMHXsphQk0Aw2v0W17OCv2CPwFIWnSBDAfmzOmSt0KmZhj1ZwERLU5N72GwsyIREwCKZtIsAe/uL3NpapW42ciMTWitXI8g9uDj/aCAEZoaqRHtf8ZmduPFAtW1kz2BWntXQRUo0FhTrVcKxLTZmNbi7Fd0NR8Vhsz5x6jZMHIrJrS3Nx98WAQ5lyJsXdGGxs0eeduS5Brs1+y2dZRe0EBajc3LuaHEKRks8qFIYrC0EZb79KM31qUbCO9l44mJWyXKY9mbMnkJzAeo0Ni/3hb+WynqDGkDJHNa/Okrd8BWJpPag1gHpdO5vL6G5tnC15rRBaI6sNj/Ru25Wjez3E+LTTbvxxaRB/PdtVj+4noJ91nOp3NTB6wAAAAAElFTkSuQmCC); 
+}
+
+
+#earth .planet{
+width:40px;
+height: 40px;
+animation: shadow-uranus linear infinite;
+ z-index: 2;
+ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAAGBQTFRFGDRdAyFNIDxkQld5CCZTIztsJD1lAAAArsblO230dJfgP2vUnLbbbovAOF2vN1GERnb0Un/yW3asWH3PeY+uhKfyYXaVjafNT2WNeJ3zv9f0nrzzX4rzkLHzrcjzbZX0L9IPbAAAAAh0Uk5TfSC49Uv+4wC/XoCAAAACEUlEQVQoz12T2WKrMAxECWDC4n1fZOv//7IiaXp760cOtkaj0fT8nHXe1LLEmJd5/fk4feDGGFPeR0U/5G39H290zXohhJUi+czY9gs/lhytsM4JvvPEebJZsccH3zSldDrX6uhw8jMl/+Y33nKWibdQChhTsDRzXdbm5Y1nla1LYxAwGjsChvPmcb7xGrMVrtemQdPB0ltt6C6Z80p4y164CxpqMMcBZdRWey9O2rg9p5VlIS5ttMGCiGFUgn20xoXP6zQrJd2JAKW83q11tF5Cb9zZPE9btPIcI5AmLKXXEfoIASGchLeJ5eTCKNA7GMReu8HR26AGLqnUxFRyF3U7aqFrpQVjXrXBOJGXKUexl5fgPsgzqjpIV2sAztk4ZZ/2gVBqfb8NJH/QwcC5j1P0KTU0UOttKrUHh8Y2qL/9jcUZAsCrJTwOHYyG3so3XrJNJ7U1Xn4UfWiAW1nrPPllmqk4v1lrRQMarQ2QPKonBNmyLlScGg1Ik6C6QG8XbA3P5NlKI6EonGHoA2gY5BwZVqAAReIeyXNlyvJ9DJpWozcPU8hzJFNsvAf6pIySOooDUBA6tRBCP5OUav4OE1NSXHu9nQ+kn9LiklXbTxSJS7fvt1kAx+Wc9H57/Aty9FImms3Or+uSBOPy+LUGc/RkT6KgO0lVY57/LpHKlEnrvacV+LtE7xVkSuW8bL9W8AvOdz8ZXmQqKAAAAABJRU5ErkJggg==);
+}
+
+#uranus .pos,
+#uranus .planet,
+#uranus.orbit {
+animation-duration: 7.35138s; }
+/* 
+#sun.planet{
+  animation-duration: 10s;
+} */
+
+#earth .pos,
+#earth .planet,
+#earth.orbit {
+animation-duration: 10s;}
+
+.mybox :after{
+content: "jklk"; 
+margin: 60px;
+
+}
+
+@keyframes popup{
+from{top:50%;}
+to{top:-30%;}
+from{height:20px;
+  width: 20px;}
+  to{height:100px;
+  width: 100px;}
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+ @keyframes orbit {
+
+    0% {
+      transform: rotateX(90deg) rotateZ(0deg); }
+  
+    100% {
+      transform: rotateX(90deg) rotateZ(-360deg); } 
+
+} 
+
+@keyframes invert { 
+0% {
+  transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg); }
+
+100% {
+  transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); } 
 }
+
+@keyframes shadow-uranus {
+0% {
+  box-shadow: inset 8px 0 5px rgba(0, 0, 0, 0.2);
+  /* LEFT */ }
+
+25% {
+  box-shadow: inset 40px -15px 30px rgba(0, 0, 0, 0.2);
+  /* BOTTOM */ }
+
+25.01% {
+  box-shadow: inset -40px -15px 40px rgba(0, 0, 0, 0.2);
+  /* BOTTOM */ }
+
+50% {
+  box-shadow: inset -8px 0 5px rgba(0, 0, 0, 0.2);
+  /* RIGHT */ }
+
+75% {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  /* TOP */ }
+
+100% {
+  box-shadow: inset 8px 0 10px rgba(0, 0, 0, 0.2);
+  /* LEFT */ } }
