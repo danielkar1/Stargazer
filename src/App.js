@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { observer,inject } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import logo from './logo.svg';
 import './App.css';
-import './components/SolarSystem'
-import SolarSystem from './components/SolarSystem';
+import ContentContainer from './components/ContentContainer'
+import Universe from './components/Universe'
 
-// @inject('Planetstore')
-// @observer
-function App() {
-  return (
-    <Router> 
-      <SolarSystem/>
-    </Router>
-   
-  );
+@inject('PlanetsStore')
+@observer
+class App extends Component {
+
+  render() {
+    return (
+      <Router>
+
+        <Universe />
+      </Router>
+
+    );
+  }
 }
-
 export default App;

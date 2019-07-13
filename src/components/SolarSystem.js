@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-
-import './../App.css';
-
+import Planets from './Planets'
+import ContentContainer from './ContentContainer'
 class SolarSystem extends Component{
 
     render(){
-        return<div id="universe">
-           
+           return(
         <div id="solar-system" >
-        <div id="sun"></div>
-            
+            <Planets/>
+           
             </div> 
-        </div>
        
-    }
+           )}
 
 }
 
