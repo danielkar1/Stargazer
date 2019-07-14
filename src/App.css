@@ -20,7 +20,8 @@ html {
   background-repeat: no-repeat;
   /* perspective: 700px; */
   background-size: cover;
-  transform-style: preserve-3d; 
+  transition-duration: 2s;
+ 
 }
 
 #solar-system{
@@ -31,6 +32,8 @@ html {
 /* background-image: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg); */
  perspective:25em; 
  transform: rotateX(-15deg);
+ transition-duration: 2s;
+ transition-timing-function: ease;
  transform-style: preserve-3d; 
 
  
@@ -41,13 +44,16 @@ html {
   border-radius: 225px;
   background-color: #202020;
   background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
    background-size: cover; 
   animation-iteration-count: infinite;
   animation-timing-function: linear; 
-backface-visibility: hidden;
- /* transform: scale(0.9); */
+  backface-visibility: hidden;
   transition-duration: 0.5s;
-        transition-timing-function: ease;
+   transition-timing-function: ease;
 }
 
   #sun .planet{
@@ -55,12 +61,9 @@ backface-visibility: hidden;
     z-index: 1;
     top: 50%;
     left: 50%;
-    background:black;
-    /* margin-top: -0.5em;
-    margin-left: -0.5em; */
     border-radius: 225px;
-    height:100px;
-    width: 100px;
+    height:10em;
+    width: 10em;
     
     /* color: blueviolet; */
     /* box-shadow: 0 0 60px rgba(255, 160, 60, 0.9);  */
@@ -75,10 +78,9 @@ backface-visibility: hidden;
   left: 50%;
   border:2px solid white;
   border-radius: 50%;
-  /* height: 160px;
-  width: 160px; */
   transform-style: preserve-3d;
   animation: orbit; 
+  
   animation-iteration-count: infinite; 
   animation-timing-function: linear;
  }
@@ -100,15 +102,7 @@ backface-visibility: hidden;
       filter: blur(0);
     }
 
-    .universe .planetbig{ 
-      position: absolute;
-      /* left: 50%; */
-      /* top: 50%; */
-      height: 50%;
-      width: 50%;
-  
-  } 
-
+ 
 #uranus .pos {
 z-index: 1;
 position: absolute;
@@ -122,8 +116,6 @@ top: 50%;
   position: absolute;
   color: white;
   
-  /* left: 0%;
-  top: 10%; */
   }
 
 
@@ -141,7 +133,7 @@ top: 50%;
   margin-left: -7.5em;}
  
 #sun.orbit{
-   border: none;
+  border: none;
   opacity: 1;
   width: 5.50959em;
   height: 5.50959em;
@@ -154,27 +146,29 @@ width: 1.5em;
 height: 1.5em;
 animation: shadow-uranus linear infinite;
 z-index: 2;
-background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAABGdBTUEAALGPC/xhBQAAAGBQTFRFsW89lWA2jVwzsm8+qGo72oVJrW08h1gxlWA15IpMrW09jlw0l2E2nGM3v3ZC3YdK3odKyHtE75BP8JFQ8JFQ8JFQ8JFQ8JFQw3hD8JFQ8JFQ8JFQ8JFQ8JFQ8JFQAAAAe3ooYQAAACB0Uk5Tk0+hrcTz6g7P5tkiYurz49bk79XR3vvm2PH26ezi2QCQ4vSgAAABm0lEQVQoz1VSWXaEMAzLLAw7ZHMSx0vvf8uaTtvX+icQYSRbch/vGrf7ftV0v43fV+59bNP+Oo6jtXAs0/YHWg1o4TxnqyG05bn+QOt0AUIRKWVV39qyvqF1f4VTFSqiZgWuerarz6D7KwyoqkI19k5UFYfjeUHbdJzEkLQS9cLCSELDsX24cVoCVYYMHXsphQk0Aw2v0W17OCv2CPwFIWnSBDAfmzOmSt0KmZhj1ZwERLU5N72GwsyIREwCKZtIsAe/uL3NpapW42ciMTWitXI8g9uDj/aCAEZoaqRHtf8ZmduPFAtW1kz2BWntXQRUo0FhTrVcKxLTZmNbi7Fd0NR8Vhsz5x6jZMHIrJrS3Nx98WAQ5lyJsXdGGxs0eeduS5Brs1+y2dZRe0EBajc3LuaHEKRks8qFIYrC0EZb79KM31qUbCO9l44mJWyXKY9mbMnkJzAeo0Ni/3hb+WynqDGkDJHNa/Okrd8BWJpPag1gHpdO5vL6G5tnC15rRBaI6sNj/Ru25Wjez3E+LTTbvxxaRB/PdtVj+4noJ91nOp3NTB6wAAAAAElFTkSuQmCC); 
+background-image: url(https://zeyeland.com/frontResources/textures/venusmap.jpg); 
+animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite;
+
 }
 
 
 #earth .planet {
   
-  width: 3em;
+  width:3em;
   height: 3em;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: absolute;
+  
   margin: auto;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
-
+  box-shadow: 0px 0 2px 0.1px ;
+  /* box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000; */
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg);
+  background-size: cover;
+  animation: shadow-uranus 30s linear infinite, spin 15s linear alternate infinite;
 }
 
-#earth .planet :after {
+/* #earth .planet :after {
   position: absolute;
   content: "";
   top: 0;
@@ -183,16 +177,16 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMA
   right: 0;
   animation: shadow-uranus 7s linear infinite;
   /* box-shadow: -2px -2px 5px 2px #000 inset;; */
-  border-radius: 50%;
+  /* border-radius: 50%;
   
-}
+} */ */
 
 #earth .planet > div {
   width: 200%;
   height: 100%;
-  animation: invert,spin 15s linear alternate infinite;
+  /* animation:spin 15s linear alternate infinite; */
   /* animation: spin 30s linear alternate infinite; */
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg);
+  /* background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg); */
   
   /*orginal image at https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg */
   background-size: cover;
@@ -210,10 +204,17 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMA
   margin: auto;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
+  box-shadow: 0 0 10px 2px #000 inset, 0 0 15px 2px rgb(248, 224, 2);
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Map_of_the_full_sun.jpg/640px-Map_of_the_full_sun.jpg);
+  animation: spin 30s linear alternate infinite;
+  background-size: cover;
 }
 
-#sun .planet :after {
+#sun .planet:hover{
+ animation: sun-aura 1s linear forwards alternate infinite;
+}
+
+/* #sun .planet :after {
   position: absolute;
   content: "";
   top: 0;
@@ -222,18 +223,15 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMA
   right: 0;
   box-shadow: -2px -1px 0px 1px 2px #000 inset;
   border-radius: 50%;
-}
+} */
 
-#sun .planet > div {
+/* #sun .planet > div {
   width: 200%;
-  height: 100%;
-  animation: spin 15s linear alternate infinite;
+  height: 100%; */
   /* animation: spin 30s linear alternate infinite; */
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Map_of_the_full_sun.jpg/640px-Map_of_the_full_sun.jpg);
   /*orginal image at https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg */
-  background-size: cover;
 
-}
+/* } */
 
 
 
@@ -242,15 +240,13 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMA
  width:10%;
  height: 10%;
  margin: 10%; 
-  animation: shadow-uranus linear infinite;  
+  animation: linear infinite;  
 }
 
 .planetbig .planet {
  position: absolute;
+ margin: 5%;
  transform: scale(2); 
-/* width:10px;
-height: 10px;
-margin: 10px; */
  animation: shadow-uranus linear infinite;
 
 }
@@ -258,7 +254,7 @@ margin: 10px; */
 
 
 #uranus .pos,
-#uranus .planet,
+
 #uranus.orbit {
  animation-duration: 7.35138s; 
  animation-delay: 0.5s; 
@@ -266,22 +262,18 @@ margin: 10px; */
 }
 
 #earth .pos,
-#earth .planet,
+#earth.planet,
 #earth.orbit {
-animation-duration: 11s;
+animation-duration: 15s;
 animation-delay: 0.7s;
 }
-/* 
-#earth.orbit{
-
-  animation: orbit 10s, popup 10s infinite;
-} */
 
 
 @keyframes spin {
-  to {
-    transform: translateX(-50%);
-  }
+
+to{
+  background-position: 100%;
+}
 }
 
 @keyframes popup{
@@ -314,27 +306,37 @@ animation-delay: 0.7s;
 }
 
 @keyframes shadow-uranus {
-0% {
-  box-shadow: inset 8px 0 5px rgba(0, 0, 0, 0.2);
-  /* LEFT */ }
+  0% {
+    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
+    /* RIGHT */ }
 
-25% {
-  box-shadow: inset 40px -15px 30px rgba(0, 0, 0, 0.2);
-  /* BOTTOM */ }
+  25% {
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+    /* TOP */ }
 
-25.01% {
-  box-shadow: inset -40px -15px 40px rgba(0, 0, 0, 0.2);
-  /* BOTTOM */ }
+  50% {
+    box-shadow: inset 4px 0 2px rgba(0, 0, 0, 0.5);
+    /* LEFT */ }
 
-50% {
-  box-shadow: inset -8px 0 5px rgba(0, 0, 0, 0.2);
-  /* RIGHT */ }
+  75% {
+    box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);
+    /* BOTTOM */ }
 
-75% {
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  /* TOP */ }
+  75.01% {
+    box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);
+    /* BOTTOM */ }
 
-100% {
-  box-shadow: inset 8px 0 10px rgba(0, 0, 0, 0.2);
-  /* LEFT */ } }
+  100% {
+    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
+    /* RIGHT */ } }
 
+
+  @keyframes sun-aura {
+    0% {
+  box-shadow: 0 0 10px 2px #000 inset, 0 0 15px 2px rgb(248, 224, 2);
+
+      /* LEFT */ }  
+    100% {
+      box-shadow: 0 0 10px 2px #000 inset, 0 0 35px 2px rgb(248, 224, 2);
+      /* LEFT */ } }
+    
