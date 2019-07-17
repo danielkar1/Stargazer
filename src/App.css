@@ -16,7 +16,7 @@ html {
   position: relative;
   width: 100vm;
   height: 100vh;
-  background-position: center 40%;
+  background-position: center;
   background-repeat: no-repeat;
   /* perspective: 700px; */
   background-size: cover;
@@ -28,22 +28,23 @@ html {
  position: absolute; 
  height:100%;
  width: 100%;
- /* margin: 10%; */
-/* background-image: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg); */
- perspective:25em; 
+ perspective:40em; 
  transform: rotateX(-15deg);
  transition-duration: 2s;
  transition-timing-function: ease;
  transform-style: preserve-3d; 
-
- 
 }
 
+/* #solar-system:hover {
+  transform: scale(1.2);
+} */
+  
 .planet {
   position:absolute;
   border-radius: 225px;
   background-color: #202020;
   background-repeat: no-repeat;
+  margin: auto;
   top: 0;
   bottom: 0;
   left: 0;
@@ -56,7 +57,7 @@ html {
    transition-timing-function: ease;
 }
 
-  #sun .planet{
+  /* #sun .planet{
     position: absolute;
     z-index: 1;
     top: 50%;
@@ -67,25 +68,23 @@ html {
     
     /* color: blueviolet; */
     /* box-shadow: 0 0 60px rgba(255, 160, 60, 0.9);  */
-    background: radial-gradient(circle at 100px 100px, #f0ec09, #000);
+    /* background: radial-gradient(circle at 100px 100px, #f0ec09, #000);
     /* background-color: rgba(224, 117, 2, 0.9);  */
-    transform-style: preserve-3d; 
-  }
+    /* transform-style: preserve-3d; 
+  } */ 
 
 .orbit {
   position: absolute;
   top: 50%;
   left: 50%;
-  border:2px solid white;
+  border:1px solid white;
   border-radius: 50%;
   transform-style: preserve-3d;
   animation: orbit; 
-  
   animation-iteration-count: infinite; 
   animation-timing-function: linear;
  }
 
-  
     .pos {
       position: absolute;
       top: 50%;
@@ -102,13 +101,17 @@ html {
       filter: blur(0);
     }
 
+#mercury .pos{
+z-index: 1;
+position: absolute;
+color: white;
+}
  
 #uranus .pos {
 z-index: 1;
 position: absolute;
 color: white;
-left: 0%;
-top: 50%;
+
 }
 
 #earth .pos {
@@ -118,12 +121,18 @@ top: 50%;
   
   }
 
+  #mars .pos {
+    z-index: 1;
+    position: absolute;
+    color: white;
+    
+    } 
 
 #uranus.orbit {
-  width: 10.74176em;
-  height: 10.74176em;
-  margin-top: -4.6em;
-  margin-left: -4.5em; 
+  width: 11.74176em;
+  height: 11.74176em;
+  margin-top: -5.0em;
+  margin-left: -5.0em; 
 }
 
 #earth.orbit {
@@ -141,24 +150,41 @@ top: 50%;
   margin-left: -1.8em;
 }
 
+#mercury.orbit{
+  width: 9.50959em;
+  height: 9.50959em;
+  margin-top: -3.9em;
+  margin-left: -3.9em;
+}
+
+#mars.orbit{
+  width: 23.50959em;
+  height: 23.50959em;
+  margin-top: -11.0em;
+  margin-left: -11.0em;
+} 
+
 #uranus .planet{
 width: 1.5em;
 height: 1.5em;
-animation: shadow-uranus linear infinite;
 z-index: 2;
 background-image: url(https://zeyeland.com/frontResources/textures/venusmap.jpg); 
 animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite;
 
 }
 
-
+#mercury .planet {
+  width: 0.5em;
+  height: 0.5em;
+  z-index: 32;
+  background-image: url(https://zeyeland.com/frontResources/textures/venusmap.jpg); 
+  animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite;
+}
 #earth .planet {
   
   width:3em;
   height: 3em;
   position: absolute;
-  
-  margin: auto;
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 0px 0 2px 0.1px ;
@@ -167,6 +193,21 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   background-size: cover;
   animation: shadow-uranus 30s linear infinite, spin 15s linear alternate infinite;
 }
+
+#mars .planet {
+  
+  width:2.5em;
+  height: 2.5em;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0 2px 0.1px ;
+  /* box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000; */
+  background: url(https://zeyeland.com/frontResources/textures/mars_1k_color.jpg);
+  animation: shadow-uranus 35s linear infinite, spin 15s linear alternate infinite;
+}
+
+
 
 /* #earth .planet :after {
   position: absolute;
@@ -179,7 +220,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   /* box-shadow: -2px -2px 5px 2px #000 inset;; */
   /* border-radius: 50%;
   
-} */ */
+} */ 
 
 #earth .planet > div {
   width: 200%;
@@ -251,7 +292,12 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 
 }
 
-
+#mercury .pos,
+#mercury.planet,
+#mercury.orbit{
+  animation-duration: 3s;
+  animation-delay: 0.3s;
+}
 
 #uranus .pos,
 
@@ -268,6 +314,30 @@ animation-duration: 15s;
 animation-delay: 0.7s;
 }
 
+
+
+#mars.orbit,
+#mars .pos {
+ animation-duration: 10.35138s; 
+ animation-delay: 0.5s; 
+
+}
+
+.navbar{
+  display: flex;
+  /* height: 10vh; */
+ flex-flow: row;
+ flex-wrap: wrap;
+  /* width: 20vw; */
+ color: white;
+ justify-content:space-evenly;
+}
+
+.topic{
+  height: 10%;
+  width: 5%;
+  /* background-color: #000; */
+}
 
 @keyframes spin {
 

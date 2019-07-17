@@ -6,6 +6,7 @@ class SolarSystem extends Component{
     render(){
            return(
         <div id="solar-system" >
+            <ContentContainer/>
             <Planets/>
            
             </div> 
