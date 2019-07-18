@@ -7,8 +7,8 @@ import './../ContentContainer.css';
 class Navbartopics extends Component{
 
 onClick=(e)=>{
-    console.log(e.target.value)
-    this.props.PlanetsStore.Popup(e.target.text)
+  let planetClicked=e.currentTarget.innerText;
+    this.props.PlanetsStore.Popup(planetClicked)
 }
 
 

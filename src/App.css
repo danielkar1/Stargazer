@@ -35,9 +35,10 @@ html {
  transform-style: preserve-3d; 
 }
 
-/* #solar-system:hover {
-  transform: scale(1.2);
-} */
+#solar-system .planet:hover {
+  transform: scale(1.3);
+  box-shadow: 10px 10px 10px 3px white ;
+}
   
 .planet {
   position:absolute;
@@ -108,21 +109,21 @@ color: white;
 }
  
 #uranus .pos {
-z-index: 1;
+z-index: 2;
 position: absolute;
 color: white;
 
 }
 
 #earth .pos {
-  z-index: 1;
+  z-index: 3;
   position: absolute;
   color: white;
   
   }
 
   #mars .pos {
-    z-index: 1;
+    z-index: 4;
     position: absolute;
     color: white;
     
@@ -204,6 +205,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   box-shadow: 0px 0 2px 0.1px ;
   /* box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000; */
   background: url(https://zeyeland.com/frontResources/textures/mars_1k_color.jpg);
+  background-size: cover;
   animation: shadow-uranus 35s linear infinite, spin 15s linear alternate infinite;
 }
 
