@@ -5,7 +5,7 @@ import { action, observable } from 'mobx';
 
 class PlanetsStore {
   @observable PlanetMode = 'planet';
-  @observable Planets = { 'sun':'orbit', 'mercury':'orbit','mars':'orbit','uranus': `orbit`, 'earth': `orbit` }
+  @observable Planets = { 'sun': 'orbit', 'mercury': 'orbit', 'mars': 'orbit', 'uranus': `orbit`, 'earth': `orbit` }
   @observable CurrentPlanetClicked = '';
   @observable planetsKeyArr = [];
   @observable planetsValueArr = [];
@@ -36,7 +36,7 @@ class PlanetsStore {
     for (let [key, value] of Object.entries(this.Planets)) {
 
       this.planetsKeyArr.push(key)
-   
+
       this.planetsValueArr.push(value)
       console.log(value)
 

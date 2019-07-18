@@ -7,8 +7,6 @@ import Navbartopics from './Navbartopics'
 
 class Navbar extends Component {
 
-
-
   render() {
 
     var planets = this.props.PlanetsStore.planetsKeyArr;
