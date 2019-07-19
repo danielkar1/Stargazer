@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import {observer, inject} from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import './../ContentContainer.css';
 @inject('PlanetsStore')
 @observer
 
-class Navbartopics extends Component{
+class Navbartopics extends Component {
 
-onClick=(e)=>{
-  let planetClicked=e.currentTarget.innerText;
-    this.props.PlanetsStore.Popup(planetClicked)
-}
+    onClick = (e) => {
+        let planetClicked = e.currentTarget.innerText;
+        this.props.PlanetsStore.Popup(planetClicked)
+    }
 
 
-    render(){
+    render() {
         console.log(this.props.topics)
-        return(
+        return (
             <div className="topic" onClick={this.onClick}>{this.props.topic}</div>
         )
 

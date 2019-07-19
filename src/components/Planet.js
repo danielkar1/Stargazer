@@ -3,6 +3,7 @@ import { observer, inject } from 'mobx-react';
 import ContentContainer from './ContentContainer';
 
 @inject('PlanetsStore')
+@inject('ThreeDstore')
 @observer
 
 class Planet extends Component {
@@ -23,10 +24,10 @@ class Planet extends Component {
   }
   render() {
     let Id = this.props.planetsKeyArr
-    return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  >
-      <div className="pos" >
-        <div className='planet' id={Id} onClick={this.popup}>
-          <div ></div>
+    return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  onmove={this.props.ThreeDstore.getPosition(Id)}>
+      <div className="pos"  >
+        <div className='planet' id={Id} onClick={this.popup} >
+          <div></div>
           <dl className="infos">
             <dt></dt>
             <dd></dd>
