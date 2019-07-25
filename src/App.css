@@ -182,7 +182,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   animation: shadow-uranus 30s linear infinite, spin 15s linear alternate infinite;
   -webkit-animation-duration: 15s;
   -webkit-animation-timing-function: linear;
-  -webkit-animation-name:"shadow-uranus";
+  -webkit-animation-name:"shadow-uranus" 30s linear infinite, spin 15s linear alternate infinite;
   -webkit-animation-iteration-count: infinite;
 }
 
