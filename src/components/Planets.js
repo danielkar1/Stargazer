@@ -5,11 +5,10 @@ import Planet from './Planet';
 import ContentContainer from './ContentContainer';
 
 
-@inject('PlanetsStore')
+@inject('PlanetsStore', 'ThreeDstore')
 @observer
 
 class Planets extends Component {
-
    
     loadStars=()=>{
         this.props.PlanetsStore.getArray()

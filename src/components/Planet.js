@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import ContentContainer from './ContentContainer';
+import mutationObserver from '../mutation'
+@inject('PlanetsStore', 'ThreeDstore')
 
-@inject('PlanetsStore')
-@inject('ThreeDstore')
 @observer
 
 class Planet extends Component {
+
+ 
+//   mutationRealtime=()=>{
+//       mutationObserver.observe(document.documentElement, {
+//         attributes: true,
+//         characterData: true,
+//         childList: true,
+//         subtree: true,
+//         attributeOldValue: true,
+//         characterDataOldValue: true
+//       });
+// }
 
 
   popup = (e) => {
 
     this.props.PlanetsStore.Popup(e.currentTarget.id)
-    if (this.props.PlanetsStore.Planets[e.target.id] === 'ss') {
-      this.props.PlanetsStore.PlanetMode = 'planet'
-    } else {
-      this.props.PlanetsStore.PlanetMode = 'planet newCss'
-    }
+
   }
 
   contentcontainer = (e) => {
@@ -24,10 +32,9 @@ class Planet extends Component {
   }
   render() {
     let Id = this.props.planetsKeyArr
-    return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  onmove={this.props.ThreeDstore.getPosition(Id)}>
+    return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
-        <div className='planet' id={Id} onClick={this.popup} >
-          <div></div>
+        <div className='planet' id={Id} onClick={this.popup} onChange={this.props.ThreeDstore.getPosition(Id)}  >
           <dl className="infos">
             <dt></dt>
             <dd></dd>
