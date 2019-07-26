@@ -237,14 +237,14 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 #mercury.planet,
 #mercury.orbit{
   animation-duration: 3s;
-  animation-delay: 0.3s;
+  animation-delay: 2s;
 }
 
 #uranus .pos,
 
 #uranus.orbit {
  animation-duration: 7.35138s; 
- animation-delay: 0.5s; 
+ animation-delay: 1.5s; 
 
 }
 
@@ -252,7 +252,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 
 #earth.orbit {
 animation-duration: 15s;
-animation-delay: 0.7s;
+animation-delay: 1s;
 
 }
 
@@ -328,7 +328,8 @@ to{
  @keyframes orbit {
 
     0% {
-      transform: rotateX(90deg) rotateZ(0deg);} 
+      transform:  rotateX(90deg) rotateZ(0deg);} 
+
       
       100% {
         transform: rotateX(90deg) rotateZ(-360deg)}
