@@ -51,10 +51,6 @@ html {
   left: 0;
   right: 0;
    background-size: cover; 
-   -webkit-animation-name:"pulse";
-   -webkit-animation-duration: 4s;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
 
   /* animation-iteration-count: infinite;
   animation-timing-function: linear; 
@@ -99,6 +95,8 @@ color: white;
  
 #uranus .pos {
 z-index: 2;
+left: 100%;
+top: 50%; 
 position: absolute;
 color: white;
 
@@ -106,6 +104,8 @@ color: white;
 
 #earth .pos {
   z-index: 3;
+  left: 100%;
+  top: 50%; 
   position: absolute;
   color: white;
   
@@ -113,6 +113,8 @@ color: white;
 
   #mars .pos {
     z-index: 4;
+    left: 100%;
+    top: 50%; 
     position: absolute;
     color: white;
     
@@ -179,11 +181,11 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   /* box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000; */
   background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg);
   background-size: cover;
-  animation: shadow-uranus 30s linear infinite, spin 15s linear alternate infinite;
-  -webkit-animation-duration: 15s;
+   animation: shadow-uranus 15s linear infinite, spin 15s linear alternate infinite; 
+  /* -webkit-animation-duration: 15s;
   -webkit-animation-timing-function: linear;
   -webkit-animation-name:"shadow-uranus" 30s linear infinite, spin 15s linear alternate infinite;
-  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite; */
 }
 
 #mars .planet {
@@ -249,7 +251,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 }
 
 #earth .pos,
-
+#earth.planet,
 #earth.orbit {
 animation-duration: 15s;
 animation-delay: 1s;
@@ -283,28 +285,29 @@ animation-delay: 1s;
 
 @-webkit-keyframes shadow-uranus {
   0% {
-    -webkit-box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
+    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
     /* RIGHT */ }
 
   25% {
-    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
     /* TOP */ }
 
   50% {
-    -webkit-box-shadow: inset 4px 0 2px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 4px 0 2px rgba(0, 0, 0, 0.5);
     /* LEFT */ }
 
   75% {
-    -webkit-box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);
     /* BOTTOM */ }
 
   75.01% {
-    -webkit-box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);
     /* BOTTOM */ }
 
   100% {
-    -webkit-box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
+    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
     /* RIGHT */ } 
+
 }
 
 @keyframes spin {
@@ -326,15 +329,27 @@ to{
 }
 
  @keyframes orbit {
-
-    0% {
+ 
+ 0% {
       transform:  rotateX(90deg) rotateZ(0deg);} 
 
-      
-      100% {
-        transform: rotateX(90deg) rotateZ(-360deg)}
+  25%{
+    transform:  rotateX(90deg) rotateZ(-90deg);
+  }   
 
-} 
+  50%{
+    transform:rotateX(90deg) rotateZ(-180deg);
+  }
+
+  75%{
+    transform:rotateX(90deg) rotateZ(-270deg)
+  }
+
+
+      100% {
+        transform: rotateX(90deg) rotateZ(-360deg)} 
+      }
+
 
 @keyframes invert { 
 0% {

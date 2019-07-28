@@ -27,6 +27,10 @@ class Planet extends Component {
 
   }
 
+  handleClick=()=>{
+    this.props.ThreeDstore.Get()
+  }
+
   contentcontainer = (e) => {
     this.props.PlanetsStore.contentcontainer(e.target.id)
   }
@@ -34,7 +38,7 @@ class Planet extends Component {
     let Id = this.props.planetsKeyArr
     return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
-        <div className='planet' id={Id} onClick={this.popup} onChange={this.props.ThreeDstore.getPosition(Id)}  >
+        <div className='planet' id={Id} onClick={this.handleClick}  >
           <dl className="infos">
             <dt></dt>
             <dd></dd>
