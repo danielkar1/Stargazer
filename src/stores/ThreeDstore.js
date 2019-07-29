@@ -33,9 +33,8 @@ class ThreeDstore {
     alert("The image is located at: " + position.x + ", " + position.y);
   }
 
-  @action Get(currentPercent) {
+  @action Get() {
 
-    console.log(currentPercent)
     console.log(this.currentPercent)
     function findKeyframesRule(rule) {
       var ss = document.styleSheets;
@@ -174,14 +173,6 @@ class ThreeDstore {
   //   }
 
 }
-
-
-
-
-
-
-
-
 
 
 export default new ThreeDstore()
