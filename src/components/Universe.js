@@ -10,6 +10,7 @@ import {observer, inject} from 'mobx-react';
 class Universe extends Component {
 
     render() {
+        
         return <div id="universe">
             <Navbar/>
 // }

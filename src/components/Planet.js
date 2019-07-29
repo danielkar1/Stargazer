@@ -8,26 +8,11 @@ import mutationObserver from '../mutation'
 
 class Planet extends Component {
 
- 
-//   mutationRealtime=()=>{
-//       mutationObserver.observe(document.documentElement, {
-//         attributes: true,
-//         characterData: true,
-//         childList: true,
-//         subtree: true,
-//         attributeOldValue: true,
-//         characterDataOldValue: true
-//       });
-// }
-
-
   popup = (e) => {
-
     this.props.PlanetsStore.Popup(e.currentTarget.id)
-
   }
 
-  handleClick=()=>{
+  handleClick = () => {
     this.props.ThreeDstore.Get()
   }
 
