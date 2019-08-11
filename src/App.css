@@ -221,15 +221,19 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 
 .planetbig .pos{
  position: absolute;
- width:10%;
- height: 10%;
- margin: 10%; 
-  animation: linear infinite;  
+ top:50%;
+ width:25vw;
+ height: 25vh;
+ margin: auto; 
+ animation: linear infinite; 
 }
 
 .planetbig .planet {
  position: absolute;
- margin: 5%;
+ top:50%;
+ width:25vw;
+ height: 25vh;
+ margin: 0%;
  transform: scale(2); 
  animation: shadow-uranus linear infinite;
 

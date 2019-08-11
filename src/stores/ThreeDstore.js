@@ -9,7 +9,8 @@ class ThreeDstore {
   @observable totalCurrentPercent = 0;
   @observable currentPercent = 0;
   @observable test = 1;
-  @observable result = document.getElementById("animProg")
+  @observable result = document.getElementById("animProg");
+  @observable animationDuration=1500;
   @action showPercent() {
     let setimer = () => {
       if (this.currentPercent < 100) {
@@ -19,11 +20,11 @@ class ThreeDstore {
       else {
         this.currentPercent = 0;
       }
-
+      // this.result.innerText=this.currentPercent
     }
     setInterval(() => {
       setimer()
-    }, 1500);
+    }, this.animationDuration);
     //  document.getElementById("animProg").innerText=this.currentPercent;
   }
 
@@ -33,9 +34,17 @@ class ThreeDstore {
     alert("The image is located at: " + position.x + ", " + position.y);
   }
 
-  @action Get() {
+  @action GetCssAtri(id){
+  
+      let idStyle=document.querySelector(`#${id}`)
+      let style = getComputedStyle(idStyle)
+      console.log(style.animationDuration)
+  }
 
-    console.log(this.currentPercent)
+  @action Get(id) {
+    console.log(`your id is ${id}`)
+   let animationDuration=this.GetCssAtri(id)
+    console.log(animationDuration)
     function findKeyframesRule(rule) {
       var ss = document.styleSheets;
       for (var i = 0; i < ss.length; ++i) {
