@@ -10,18 +10,20 @@ import User from './User';
 class LoginContainer extends Component{
     openModul=()=>{
         // this.props.UserStore.login=true;
-        this.props.UserStore.ActivatePopup()
-        
+        this.props.UserStore.ActivatePopup() 
     
     }
     
 
     render(){
-
+        let UserName=this.props.UserStore.userName
+        console.log(UserName)
+        let UserLastName=this.props.UserStore.userLastName
+        let Planet=this.props.UserStore.userPlanet
         return(
             <div  className='LoginContainer' >
-            <input id="Button1" type="button" value={this.props.PlanetsStore.CurrentPlanetClicked} />
-            {this.props.PlanetsStore.CurrentPlanetClicked} is your planet
+            <input class="welcome" id="Button1" type="button" value={this.props.PlanetsStore.CurrentPlanetClicked} /> 
+           <div >{this.props.UserStore.logincompleted?` Hello ${UserName} ${UserLastName} from ${Planet}`: <div class="welcome">WELCOME TO STARGAZER</div>}</div>
            
             <User/>
             
