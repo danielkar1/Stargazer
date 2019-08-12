@@ -1,9 +1,9 @@
 html { 
-  background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat center center fixed; 
+  background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat  center fixed; 
   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+   -moz-background-size: cover;
+  -o-background-size: cover; 
+ background-size: cover; 
 }
 
 *{
@@ -12,10 +12,13 @@ html {
 }
 
 #universe {
-  z-index: 1;
+  z-index: 1; 
   position: relative;
+  background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat center center fixed; 
+  ;
   width: 100vm;
   height: 100vh;
+  font-size: 20px;
   background-position: center;
   background-repeat: no-repeat;
   /* perspective: 700px; */
@@ -26,24 +29,22 @@ html {
 
 #solar-system{
  position: absolute; 
- height:100%;
- width: 100%;
+ height:100vh;
+ width:100vw;
  perspective:40em; 
  transform: rotateX(-15deg);
- transition-duration: 2s;
- transition-timing-function: ease;
  transform-style: preserve-3d; 
 }
 
 #solar-system .planet:hover {
-  transform: scale(1.3);
+  transform: scale(1.5);
   box-shadow: 10px 10px 10px 3px white ;
 }
   
 .planet {
   position:absolute;
   border-radius: 225px;
-  background-color: #202020;
+  background-color: #202020; 
   background-repeat: no-repeat;
   margin: auto;
   top: 0;
@@ -51,8 +52,8 @@ html {
   left: 0;
   right: 0;
    background-size: cover; 
-  animation-iteration-count: infinite;
-  animation-timing-function: linear; 
+  /* animation-iteration-count: infinite;
+  animation-timing-function: linear;  */
   backface-visibility: hidden;
   transition-duration: 0.5s;
    transition-timing-function: ease;
@@ -78,12 +79,10 @@ html {
       margin-top: -1em;
       margin-left: -1em;
       transform-style: preserve-3d;
-      animation-name: invert;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear; 
+      animation: invert infinite linear;
       backface-visibility: hidden;    
-      -webkit-filter: blur(0);
-      filter: blur(0);
+      /* -webkit-filter: blur(8);
+      filter: blur(0); */
     }
 
 #mercury .pos{
@@ -92,24 +91,22 @@ position: absolute;
 color: white;
 }
  
-#uranus .pos {
+ #uranus .pos {
 z-index: 2;
 position: absolute;
 color: white;
 
-}
+} 
 
 #earth .pos {
   z-index: 3;
-  position: absolute;
-  color: white;
-  
+  position: absolute;  
   }
 
   #mars .pos {
     z-index: 4;
     position: absolute;
-    color: white;
+   
     
     } 
 
@@ -161,7 +158,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 #mercury .planet {
   width: 0.5em;
   height: 0.5em;
-  z-index: 32;
+  z-index: 3;
   background-image: url(https://zeyeland.com/frontResources/textures/venusmap.jpg); 
   animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite;
 }
@@ -203,32 +200,27 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   margin: auto;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 0 10px 2px #000 inset, 0 0 15px 2px rgb(248, 224, 2);
+   box-shadow:  0 0 15px 2px rgb(248, 224, 2); 
   background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Map_of_the_full_sun.jpg/640px-Map_of_the_full_sun.jpg);
-  animation: spin 30s linear alternate infinite;
+  animation:sun-aura 1.5s linear alternate infinite,spin 30s linear alternate infinite;
   background-size: cover;
 }
-
-#sun .planet:hover{
- animation: sun-aura 1s linear forwards alternate infinite;
-}
-
 
 
 .planetbig .pos{
  position: absolute;
- width:10%;
- height: 10%;
- margin: 10%; 
+ top:5em;
+ left:5em;
+ margin: auto;
+ /* /* width:10em;
+ height: 10em; */
   animation: linear infinite;  
 }
 
 .planetbig .planet {
  position: absolute;
- margin: 5%;
- transform: scale(2); 
+ transform: scale(1.5); 
  animation: shadow-uranus linear infinite;
-
 }
 
 #mercury .pos,
@@ -272,11 +264,66 @@ animation-delay: 0.7s;
  justify-content:space-evenly;
 }
 
-.topic{
-  height: 10%;
-  width: 5%;
-  /* background-color: #000; */
-}
+/* INFO CSS */
+dl.infos {
+  position: absolute;
+  display: block;
+  /* opacity: 0; */
+  width: 100%;
+  height: 100%;
+  margin-top: -90%;
+  margin-left: 90%;
+  padding-left: 100%;
+  
+  /* transform-origin: 100% 100%; */
+  transform-style: preserve-3d;
+  /* transform: rotateX(45deg);  */
+ }
+
+ dd{
+  position: absolute;
+  width: 20vw;
+  font-size: 1.5vw;
+  margin-top: 10px;
+ }
+
+dl.infos:before {
+  position: absolute;
+  content: '';
+  width: 15em;
+  height: 20px;
+  left: 15px;
+  bottom: 0;
+  border-top: 1px solid white;
+  
+  border-left: 1px solid white;
+  transform-style: preserve-3d;
+  transform: skew(-45deg, 0deg);
+  box-shadow: inset 1px 1px black; }
+
+dl.infos dt {
+  position: absolute;
+ 
+  left: 50px;
+  margin-bottom: 26px;
+  bottom: 30px;
+  color: #FFF;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px black; }
+
+
+  .sun #sun .infos,
+.mercury #mercury .infos,
+.venus #venus .infos,
+.earth #earth .infos,
+.mars #mars .infos,
+.jupiter #jupiter .infos,
+.saturn #saturn .infos,
+.uranus #uranus .infos,
+.neptune #neptune .infos {
+  display: block;
+  opacity: 1;
+  transform: rotateX(0deg); }
 
 @keyframes spin {
 
@@ -348,4 +395,30 @@ to{
     100% {
       box-shadow: 0 0 10px 2px #000 inset, 0 0 35px 2px rgb(248, 224, 2);
       /* LEFT */ } }
+    
+
+      /* Responsive adjustments */
+
+      @media screen and (max-width: 299px) {
+        #universe {
+          font-size: 45%; } }
+      @media screen and (min-width: 300px) {
+        #universe {
+          font-size:  60%; } }
+      @media screen and (min-width: 500px) {
+        #universe {
+          font-size: 65%; } }
+      @media screen and (min-width: 600px) {
+        #universe {
+          font-size: 70%; } }
+      @media screen and (min-width: 760px) {
+        #universe {
+          font-size: 80%; } }
+      @media screen and (min-width: 1000px) {
+        #universe {
+          font-size: 90%; }
+        }
+        @media screen and (min-width: 1300px) {
+          #universe {
+            font-size: 100%; } }
     

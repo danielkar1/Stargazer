@@ -10,13 +10,8 @@ class Planet extends Component {
 
 
   popup = (e) => {
-
+    this.props.PlanetsStore.ifClicked=true;
     this.props.PlanetsStore.Popup(e.currentTarget.id)
-    if (this.props.PlanetsStore.Planets[e.target.id] === 'ss') {
-      this.props.PlanetsStore.PlanetMode = 'planet'
-    } else {
-      this.props.PlanetsStore.PlanetMode = 'planet newCss'
-    }
   }
 
   contentcontainer = (e) => {
@@ -24,13 +19,15 @@ class Planet extends Component {
   }
   render() {
     let Id = this.props.planetsKeyArr
-    return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  onmove={this.props.ThreeDstore.getPosition(Id)}>
+    return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
         <div className='planet' id={Id} onClick={this.popup} >
           <div></div>
           <dl className="infos">
-            <dt></dt>
-            <dd></dd>
+            <dt>this is oneffffffffff</dt>
+            <dd>look it two, bla bla ,dj;ljd/
+              kfdlj;fjf ;ddk;ljd dsfsdfdfdsf fsdfsdfsdf
+            </dd>
           </dl>
         </div>
       </div>

@@ -7,10 +7,15 @@ class PlanetsStore {
   @observable PlanetMode = 'planet';
   @observable Planets = { 'sun': 'orbit', 'mercury': 'orbit', 'mars': 'orbit', 'uranus': `orbit`, 'earth': `orbit` }
   @observable CurrentPlanetClicked = '';
+  @observable ifClicked=false;
   @observable planetsKeyArr = [];
   @observable planetsValueArr = [];
 
   @action Popup = (e) => {
+  
+    if(this.ifClicked==true){
+      this.Planets[this.CurrentPlanetClicked]='orbit'
+    }
     this.CurrentPlanetClicked = e;
     if (this.Planets[e] === 'orbit') {
       this.Planets[e] = 'planetbig';
