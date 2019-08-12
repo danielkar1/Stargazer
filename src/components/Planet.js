@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import ContentContainer from './ContentContainer';
+import LoginContainer from './LoginContainer';
 
 @inject('PlanetsStore')
 @inject('ThreeDstore')
@@ -14,21 +14,20 @@ class Planet extends Component {
     this.props.PlanetsStore.Popup(e.currentTarget.id)
   }
 
-  contentcontainer = (e) => {
-    this.props.PlanetsStore.contentcontainer(e.target.id)
-  }
+  // contentcontainer = (e) => {
+  //   this.props.PlanetsStore.contentcontainer(e.target.id)
+  // }
   render() {
     let Id = this.props.planetsKeyArr
     return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
         <div className='planet' id={Id} onClick={this.popup} >
           <div></div>
-          {this.props.PlanetsStore.ifClicked?<dl className="infos" >
-            <dt>this is oneffffffffff</dt>
+          {this.props.PlanetsStore.Planets[Id]=="planetbig"?<dl className="infos" >
             <dd>look it two, bla bla ,dj;ljd/
               kfdlj;fjf ;ddk;ljd dsfsdfdfdsf fsdfsdfsdf
             </dd>
-          </dl>:null}
+          </dl>:console.log("got here")}
         </div>
       </div>
     </div>

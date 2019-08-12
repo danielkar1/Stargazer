@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PlantesStore from '../stores/PlantesStore';
 import Planet from './Planet';
-import ContentContainer from './ContentContainer';
+import LoginContainer from './LoginContainer';
 
 
 @inject('PlanetsStore')

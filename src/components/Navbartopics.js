@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import './../ContentContainer.css';
+import './../LoginContainer.css';
 @inject('PlanetsStore')
 @observer
 
@@ -15,7 +15,7 @@ class Navbartopics extends Component {
     render() {
         console.log(this.props.topics)
         return (
-            <div className="topic" onClick={this.onClick}>{this.props.topic}</div>
+            <div className="topic" type="button" onClick={this.onClick}>{this.props.topic}</div>
         )
 
     }

@@ -4,7 +4,9 @@ html {
    -moz-background-size: cover;
   -o-background-size: cover; 
  background-size: cover; 
-}
+ font-family: 'Rajdhani', sans-serif;
+
+ }
 
 *{
   box-sizing: border-box;
@@ -21,7 +23,6 @@ html {
   font-size: 20px;
   background-position: center;
   background-repeat: no-repeat;
-  /* perspective: 700px; */
   background-size: cover;
   transition-duration: 2s;
  
@@ -52,8 +53,6 @@ html {
   left: 0;
   right: 0;
    background-size: cover; 
-  /* animation-iteration-count: infinite;
-  animation-timing-function: linear;  */
   backface-visibility: hidden;
   transition-duration: 0.5s;
    transition-timing-function: ease;
@@ -86,30 +85,32 @@ html {
     }
 
 #sun .pos{
+position: absolute;
+
   z-index:2;
 }
 
 #mercury .pos{
 z-index: 3;
 position: absolute;
-color: white;
+
 }
  
  #uranus .pos {
 z-index: 4;
 position: absolute;
-color: white;
+
 
 } 
 
 #earth .pos {
-  z-index: 5;
   position: absolute;  
+  z-index: 5;
   }
 
   #mars .pos {
-    z-index:6;
     position: absolute;
+    z-index:6;
    
     
     } 
@@ -214,18 +215,17 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
  position: absolute;
  top:5em;
  left:5em;
- margin: auto;
-  animation: linear infinite;  
+ margin: 1em;
+animation: linear infinite;  
 }
 
 .planetbig .planet {
  position: absolute;
- transform: scale(1.5); 
+ /* transform: scale(1.5);  */
  animation: shadow-uranus linear infinite;
 }
 
 #mercury .pos,
-#mercury.planet,
 #mercury.orbit{
   animation-duration: 3s;
   animation-delay: 0.3s;
@@ -240,7 +240,6 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 }
 
 #earth .pos,
-#earth.planet,
 #earth.orbit {
 animation-duration: 15s;
 animation-delay: 0.7s;
@@ -251,11 +250,12 @@ animation-delay: 0.7s;
  animation-delay: 0.5s; 
 }
 .navbar{
-  display: flex;
-  
+  display: flex; 
  flex-flow: row;
  flex-wrap: wrap;
+ font-family: 'Rajdhani', sans-serif;
  color: white;
+ margin-top: 1em;
  justify-content:space-evenly;
 }
 
@@ -263,61 +263,52 @@ animation-delay: 0.7s;
 dl.infos {
   position: absolute;
   display: block;
-  /* opacity: 0; */
+   opacity: 10%; 
   width: 100%;
   height: 100%;
   margin-top: -90%;
   margin-left: 90%;
   padding-left: 100%;
-  
-  /* transform-origin: 100% 100%; */
+  font-family: 'Rajdhani', sans-serif;
+  transform-origin: 100% 100%; 
   transform-style: preserve-3d;
-  /* transform: rotateX(45deg);  */
  }
+.topic{
+  box-shadow: inset 0.0em 0.2em 0.5em 0.2em rgb(163, 161, 149); 
+  /* background-color: blueviolet; */
+  border-radius: 100px;
+}
 
- dd{
-  position: absolute;
-  width: 20vw;
-  font-size: 1.5vw;
-  margin-top: 5px;
- }
+.topic:hover{
+  background-color:rgb(152, 149, 200); 
+
+}
+
 
 dl.infos:before {
   position: absolute;
-  content: 'info';
-  width: 15em;
-  height: 20px;
-  left: 15px;
+  content: ''; 
+  width: 25em;
+  height: 3em;
+  left: 1em;
   bottom: 0;
   border-top: 1px solid white;
-  
   border-left: 1px solid white;
   transform-style: preserve-3d;
   transform: skew(-45deg, 0deg);
-  box-shadow: inset 1px 1px black; }
 
-dl.infos dt {
-  position: absolute;
-  left: 50px;
-  margin-bottom: 26px;
-  bottom: 30px;
-  color: #FFF;
-  font-size: 14px;
-  text-shadow: 1px 1px 2px black; }
+  }
 
+  dd{
+    position: absolute;
+    width: 20vw;
+    font-size: 1.5vw;
+    margin-top: 5px;
+    color: antiquewhite;
+    margin-inline-start: 10px
+   }
+  
 
-  .sun #sun .infos,
-.mercury #mercury .infos,
-.venus #venus .infos,
-.earth #earth .infos,
-.mars #mars .infos,
-.jupiter #jupiter .infos,
-.saturn #saturn .infos,
-.uranus #uranus .infos,
-.neptune #neptune .infos {
-  display: block;
-  opacity: 1;
-  transform: rotateX(0deg); }
 
 @keyframes spin {
 
