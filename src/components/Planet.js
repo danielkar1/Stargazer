@@ -10,7 +10,7 @@ class Planet extends Component {
 
 
   popup = (e) => {
-    this.props.PlanetsStore.ifClicked=true;
+   
     this.props.PlanetsStore.Popup(e.currentTarget.id)
   }
 
@@ -23,12 +23,12 @@ class Planet extends Component {
       <div className="pos"  >
         <div className='planet' id={Id} onClick={this.popup} >
           <div></div>
-          <dl className="infos">
+          {this.props.PlanetsStore.ifClicked?<dl className="infos" >
             <dt>this is oneffffffffff</dt>
             <dd>look it two, bla bla ,dj;ljd/
               kfdlj;fjf ;ddk;ljd dsfsdfdfdsf fsdfsdfsdf
             </dd>
-          </dl>
+          </dl>:null}
         </div>
       </div>
     </div>

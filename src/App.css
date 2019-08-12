@@ -85,26 +85,30 @@ html {
       filter: blur(0); */
     }
 
+#sun .pos{
+  z-index:2;
+}
+
 #mercury .pos{
-z-index: 1;
+z-index: 3;
 position: absolute;
 color: white;
 }
  
  #uranus .pos {
-z-index: 2;
+z-index: 4;
 position: absolute;
 color: white;
 
 } 
 
 #earth .pos {
-  z-index: 3;
+  z-index: 5;
   position: absolute;  
   }
 
   #mars .pos {
-    z-index: 4;
+    z-index:6;
     position: absolute;
    
     
@@ -164,11 +168,11 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 }
 #earth .planet {
   
+  position: absolute;
+  /* overflow: hidden; */
   width:3em;
   height: 3em;
-  position: absolute;
-  overflow: hidden;
-  border-radius: 50%;
+  z-index:4;
   box-shadow: 0px 0 2px 0.1px ;
   /* box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000; */
   background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg);
@@ -178,10 +182,9 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 
 #mars .planet {
   
+  position: absolute;
   width:2.5em;
   height: 2.5em;
-  position: absolute;
-  overflow: hidden;
   border-radius: 50%;
   box-shadow: 0px 0 2px 0.1px ;
   background: url(https://zeyeland.com/frontResources/textures/mars_1k_color.jpg);
@@ -212,8 +215,6 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
  top:5em;
  left:5em;
  margin: auto;
- /* /* width:10em;
- height: 10em; */
   animation: linear infinite;  
 }
 
@@ -231,7 +232,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 }
 
 #uranus .pos,
-
+#uranus .planet,
 #uranus.orbit {
  animation-duration: 7.35138s; 
  animation-delay: 0.5s; 
@@ -244,22 +245,16 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 animation-duration: 15s;
 animation-delay: 0.7s;
 }
-
-
-
 #mars.orbit,
 #mars .pos {
  animation-duration: 10.35138s; 
  animation-delay: 0.5s; 
-
 }
-
 .navbar{
   display: flex;
-  /* height: 10vh; */
+  
  flex-flow: row;
  flex-wrap: wrap;
-  /* width: 20vw; */
  color: white;
  justify-content:space-evenly;
 }
@@ -284,12 +279,12 @@ dl.infos {
   position: absolute;
   width: 20vw;
   font-size: 1.5vw;
-  margin-top: 10px;
+  margin-top: 5px;
  }
 
 dl.infos:before {
   position: absolute;
-  content: '';
+  content: 'info';
   width: 15em;
   height: 20px;
   left: 15px;
@@ -303,7 +298,6 @@ dl.infos:before {
 
 dl.infos dt {
   position: absolute;
- 
   left: 50px;
   margin-bottom: 26px;
   bottom: 30px;
@@ -401,22 +395,22 @@ to{
 
       @media screen and (max-width: 299px) {
         #universe {
-          font-size: 45%; } }
+          font-size: 50%; } }
       @media screen and (min-width: 300px) {
         #universe {
           font-size:  60%; } }
       @media screen and (min-width: 500px) {
         #universe {
-          font-size: 65%; } }
+          font-size: 62%; } }
       @media screen and (min-width: 600px) {
         #universe {
-          font-size: 70%; } }
+          font-size: 67%; } }
       @media screen and (min-width: 760px) {
         #universe {
-          font-size: 80%; } }
+          font-size:70%; } }
       @media screen and (min-width: 1000px) {
         #universe {
-          font-size: 90%; }
+          font-size: 73%; }
         }
         @media screen and (min-width: 1300px) {
           #universe {

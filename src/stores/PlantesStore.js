@@ -31,6 +31,7 @@ class PlanetsStore {
       // document.getElementById(e).childNodes[1].classList.removeAttribute(e)
 
     }
+    this.ifClicked=true;
   }
   @action contentcontainer = (e) => {
     document.getElementById(e).style.animation = "popup 4s "
