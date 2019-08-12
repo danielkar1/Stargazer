@@ -5,9 +5,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import PlanetsStore from './stores/PlantesStore'
+import ThreeDstore from './stores/ThreeDstore'
+import UserStore from './stores/UserStore'
 
 const stores = {
-    PlanetsStore
+    PlanetsStore,
+    ThreeDstore,
+    UserStore
 }
 ReactDOM.render(<Provider {...stores}><App /></Provider>, document.getElementById('root'));
 

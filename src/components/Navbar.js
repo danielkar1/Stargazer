@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import './../ContentContainer.css';
+import './../LoginContainer.css';
 import Navbartopics from './Navbartopics'
 @inject('PlanetsStore')
 @observer
 
 class Navbar extends Component {
-
-
 
   render() {
 

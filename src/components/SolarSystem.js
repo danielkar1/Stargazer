@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Planets from './Planets'
-import ContentContainer from './ContentContainer'
+import LoginContainer from './LoginContainer'
 class SolarSystem extends Component{
 
     render(){
            return(
         <div id="solar-system" >
-            <ContentContainer/>
+            <LoginContainer/>
             <Planets/>
            
             </div> 
