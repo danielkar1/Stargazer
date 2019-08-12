@@ -24,8 +24,9 @@ class Planet extends Component {
         <div className='planet' id={Id} onClick={this.popup} >
           <div></div>
           {this.props.PlanetsStore.Planets[Id]=="planetbig"?<dl className="infos" >
-            <dd>look it two, bla bla ,dj;ljd/
-              kfdlj;fjf ;ddk;ljd dsfsdfdfdsf fsdfsdfsdf
+            <dd>"this is your solar system, the planets infos will
+              be upadated soon with an info bank, in the future it will
+              take info and pictures from space Api's"
             </dd>
           </dl>:console.log("got here")}
         </div>

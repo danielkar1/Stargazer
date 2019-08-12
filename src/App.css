@@ -37,10 +37,10 @@ html {
  transform-style: preserve-3d; 
 }
 
-#solar-system .planet:hover {
+/* #solar-system .planet:hover {
   transform: scale(1.5);
   box-shadow: 10px 10px 10px 3px white ;
-}
+} */
   
 .planet {
   position:absolute;
@@ -216,12 +216,13 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
  top:5em;
  left:5em;
  margin: 1em;
+ margin-top: 3em;
 animation: linear infinite;  
 }
 
 .planetbig .planet {
  position: absolute;
- /* transform: scale(1.5);  */
+transform: scale(1.5);  
  animation: shadow-uranus linear infinite;
 }
 
