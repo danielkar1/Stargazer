@@ -22,8 +22,8 @@ class LoginContainer extends Component{
         let Planet=this.props.UserStore.userPlanet
         return(
             <div  className='LoginContainer' >
-            <input class="welcome" id="Button1" type="button" value={this.props.PlanetsStore.CurrentPlanetClicked} /> 
-           <div >{this.props.UserStore.logincompleted?` Hello ${UserName} ${UserLastName} from ${Planet}`: <div class="welcome">WELCOME TO STARGAZER</div>}</div>
+            <input id="Button1" type="button" value={this.props.PlanetsStore.CurrentPlanetClicked} /> 
+           <div className="welcome">{this.props.UserStore.logincompleted?` Hello ${UserName} ${UserLastName} from ${Planet}`: "WELCOME TO STARGAZER"}</div>
            
             <User/>
             

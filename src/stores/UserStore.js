@@ -2,6 +2,7 @@ import { observer, inject } from 'mobx-react';
 
 import { action, observable } from 'mobx';
 
+inject('PlanetStore')
 class UserStore{
     @observable login=false;
     @observable loginpopup=false;
@@ -12,6 +13,7 @@ class UserStore{
 
 
     @action ActivatePopup=()=>{
+        console.log(this.loginpopup)
         if(this.loginpopup){
             if(this.userName!=''&&this.userLastName!=''&& this.userPlanet!=''){
             this.loginpopup=false;
@@ -24,6 +26,11 @@ class UserStore{
         }else{
             this.loginpopup=true;
         }
+    console.log(this.loginpopup)
+    }
+
+    @action closepopup=()=>{
+        this.loginpopup=false
     }
 }
 

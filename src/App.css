@@ -6,6 +6,7 @@ html {
  background-size: cover; 
  font-family: 'Rajdhani', sans-serif;
 
+  
  }
 
 *{
@@ -20,7 +21,7 @@ html {
   ;
   width: 100vm;
   height: 100vh;
-  font-size: 20px;
+   font-size: 20px; 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -170,12 +171,10 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 #earth .planet {
   
   position: absolute;
-  /* overflow: hidden; */
   width:3em;
   height: 3em;
   z-index:4;
   box-shadow: 0px 0 2px 0.1px ;
-  /* box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000; */
   background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg);
   background-size: cover;
   animation: shadow-uranus 30s linear infinite, spin 15s linear alternate infinite;
@@ -264,18 +263,20 @@ animation-delay: 0.7s;
 dl.infos {
   position: absolute;
   display: block;
-   opacity: 10%; 
+   /* opacity: 10%;  */
   width: 100%;
   height: 100%;
   margin-top: -90%;
   margin-left: 90%;
   padding-left: 100%;
   font-family: 'Rajdhani', sans-serif;
-  transform-origin: 100% 100%; 
+  color: antiquewhite;
+
+  /* transform-origin: 100% 100%;  */
   transform-style: preserve-3d;
  }
 .topic{
-  box-shadow: inset 0.0em 0.4em 0.5em 0.1em rgb(163, 161, 149); 
+  /* box-shadow: inset 0.0em 0.4em 0.5em 0.1em rgb(163, 161, 149);  */
   font-size:1.5em;
   /* background-color: blueviolet; */
   border-radius: 100px;
@@ -291,7 +292,7 @@ color: black ;
 dl.infos:before {
   position: absolute;
   content: ''; 
-  width: 25em;
+  width: 5em;
   height: 3em;
   left: 1em;
   bottom: 0;
@@ -308,7 +309,8 @@ dl.infos:before {
     font-size: 1.5vw;
     margin-top: 5px;
     color: antiquewhite;
-    margin-inline-start: 10px
+    margin-inline-start: 40px;
+    
    }
   
 
@@ -391,7 +393,8 @@ to{
         #universe {
           font-size: 50%; } }
       @media screen and (min-width: 300px) {
-        #universe {
+        #universe,
+        #popup {
           font-size:  60%; } }
       @media screen and (min-width: 500px) {
         #universe {
