@@ -8,24 +8,22 @@ import User from './User';
 @observer
 
 class LoginContainer extends Component{
-    openModul=()=>{
-        // this.props.UserStore.login=true;
-        this.props.UserStore.ActivatePopup() 
+    // openModul=()=>{
+    //     // this.props.UserStore.login=true;
+    //     this.props.UserStore.ActivatePopup() 
     
-    }
+    // }
     
 
     render(){
         let UserName=this.props.UserStore.userName
-        console.log(UserName)
         let UserLastName=this.props.UserStore.userLastName
         let Planet=this.props.UserStore.userPlanet
         return(
             <div  className='LoginContainer' >
-            <input id="Button1" type="button" value={this.props.PlanetsStore.CurrentPlanetClicked} /> 
-           <div className="welcome">{this.props.UserStore.logincompleted?` Hello ${UserName} ${UserLastName} from ${Planet}`: "WELCOME TO STARGAZER"}</div>
-           
-            <User/>
+            <input id="currentPlanet" type="button" value={this.props.UserStore.logincompleted?this.props.PlanetsStore.CurrentPlanetClicked:"Please login"} /> 
+           <div className="welcome">{this.props.UserStore.logincompleted?` Hello ${UserName} ${UserLastName} from ${Planet}`: "welcome to stargazer"}</div>
+           <button id="loginpopup" onClick={this.props.UserStore.ActivatePopup} >Login</button>
             
             </div>
         )

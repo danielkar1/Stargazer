@@ -1,6 +1,6 @@
 
 
-html { 
+/* html { 
   background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat  center fixed; 
   -webkit-background-size: cover;
    -moz-background-size: cover;
@@ -8,7 +8,7 @@ html {
  background-size: cover; 
  font-family: 'Rajdhani', sans-serif;
  font-size: 20px;
- }
+ } */
 *{
     box-sizing: border-box;
     font-family: 'Rajdhani', sans-serif;
@@ -40,28 +40,30 @@ html {
     display: flex;
     
     justify-content:space-evenly;
-    background-color: rgb(152, 149, 200);
-    /* border: 1px solid #000000; */
-    transform: skew(-15deg, 0deg);
-    box-shadow: inset 0.0em 0.5em 0.5em 0.2em rgb(238, 235, 215); 
-
+     background-color: rgb(152, 149, 200); 
+     border: 1px solid #000000;
+     transform: skew(-15deg, 0deg);
+    box-shadow: inset 0.0em 0.5em 0.5em 0.2em rgb(238, 235, 215);  
+   
 }
 
 #popup{
-  display: grid;
-  position: fixed;
-  margin: 0.3em;
-  z-index: 1;
-  top: 100%;
-  right: 0%;
- 
+
+     /* height: 33vh; */
+    /* margin-top: -36em; */
+    display: grid;
+    width: 100vw;
+    position: fixed;
+    margin-top: 3.3em;
+    z-index: 1;
+    top: 0%;
+    right: 0%;
   box-shadow: 0.0em 0.2em 0.8em 0.1em rgb(163, 161, 149); 
   color: whitesmoke;
   /* background-color: #080705; */
   opacity: 100%;
   border-radius: 1em; 
   padding-bottom: 1vh;
-  transform:skew(15deg,0deg)
 }
 
 .popupInput{

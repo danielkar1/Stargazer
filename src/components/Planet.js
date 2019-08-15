@@ -11,22 +11,19 @@ class Planet extends Component {
 
   popup = (e) => {
    
-    this.props.PlanetsStore.Popup(e.currentTarget.id)
+    this.props.PlanetsStore.planetPop(e.currentTarget.id)
   }
 
-  // contentcontainer = (e) => {
-  //   this.props.PlanetsStore.contentcontainer(e.target.id)
-  // }
   render() {
     let Id = this.props.planetsKeyArr
     return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
         <div className='planet' id={Id} onClick={this.popup} >
-          <div></div>
+          {/* <div></div> */}
           {this.props.PlanetsStore.Planets[Id]=="planetbig"?<dl className="infos" >
             <dd>this animation been made by pure css
             </dd>
-          </dl>:console.log("got here")}
+          </dl>:null}
         </div>
       </div>
     </div>

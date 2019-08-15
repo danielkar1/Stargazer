@@ -1,12 +1,13 @@
 html { 
-  background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat  center fixed; 
-  -webkit-background-size: cover;
-   -moz-background-size: cover;
-  -o-background-size: cover; 
- background-size: cover; 
- font-family: 'Rajdhani', sans-serif;
-
-  
+  background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat center center fixed; 
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 15px;
  }
 
 *{
@@ -15,9 +16,9 @@ html {
 }
 
 #universe {
-  z-index: 1; 
+ z-index: 1; 
   position: relative;
-  background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat center center fixed; 
+  /* background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat center center fixed;  */
   ;
   width: 100vm;
   height: 100vh;
@@ -25,12 +26,15 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition-duration: 2s;
- 
+  transition-duration: 2s; 
+  background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat center center fixed; 
+  background-size: cover;
+   height: 100%; 
+   overflow: hidden;  
 }
 
 #solar-system{
- position: absolute; 
+ /* position: absolute;  */
  height:100vh;
  width:100vw;
  perspective:40em; 
@@ -49,6 +53,8 @@ html {
   background-color: #202020; 
   background-repeat: no-repeat;
   margin: auto;
+ font-size: 12px;
+
   top: 0;
   bottom: 0;
   left: 0;
@@ -65,6 +71,7 @@ html {
   left: 50%;
   border:1px solid white;
   border-radius: 50%;
+  font-size: 12px;
   transform-style: preserve-3d;
   animation: orbit; 
   animation-iteration-count: infinite; 
@@ -100,7 +107,6 @@ position: absolute;
  #uranus .pos {
 z-index: 4;
 position: absolute;
-
 
 } 
 
@@ -211,10 +217,11 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 
 
 .planetbig .pos{
+  padding: 4.2em;
  position: absolute;
  top:5em;
- left:5em;
- margin: 1em;
+ left:0em;
+ margin: 2em;
  margin-top: 3em;
 animation: linear infinite;  
 }
