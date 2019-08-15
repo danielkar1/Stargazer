@@ -12,8 +12,8 @@ class PlanetsStore {
 
   @action planetPop = (e) => {
    
-
-    if (this.Planets[e] === 'orbit' &&UserStore.logincompleted==true){
+if(UserStore.logincompleted==true){
+    if (this.Planets[e] === 'orbit' ){
       console.log(this.Planets[e])
       this.Planets[this.CurrentPlanetClicked]='orbit'
       this.Planets[e] = 'planetbig';
@@ -30,6 +30,7 @@ class PlanetsStore {
     this.CurrentPlanetClicked = e;
 
   }
+}
   @action contentcontainer = (e) => {
     document.getElementById(e).style.animation = "popup 4s "
   }

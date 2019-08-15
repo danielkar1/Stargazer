@@ -14,6 +14,7 @@ class UserStore{
 
 
     @action ActivatePopup=()=>{
+    
         if(this.loginpopup){
             if(this.userName!==''&&this.userLastName!==''&& this.userPlanet!==''){
             this.loginpopup=false;
@@ -25,6 +26,7 @@ class UserStore{
             this.loginpopup=true;
             // PlantesStore.Planets[PlantesStore.CurrentPlanetClicked]='orbit'
         }
+    
     }
 
     @action closepopup=()=>{
