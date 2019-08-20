@@ -13,7 +13,6 @@ class SolarSystem extends Component{
     render(){
            return(
         <div id="solar-system" >
-            <LoginContainer/>
             <Planets/>
             </div> 
        

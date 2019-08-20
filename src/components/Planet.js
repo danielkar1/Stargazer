@@ -19,11 +19,8 @@ class Planet extends Component {
     return <div id={Id} className={this.props.PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
         <div className='planet' id={Id} onClick={this.popup} >
-          {/* <div></div> */}
           {this.props.PlanetsStore.Planets[Id]=="planetbig"?<dl className="infos" >
-            <dd>this animation been made by pure css
-            </dd>
-          </dl>:null}
+            <dd>this animation been made by pure cssjjj jkjlk kjlkjlk lkjljlk </dd> </dl>:null}
         </div>
       </div>
     </div>

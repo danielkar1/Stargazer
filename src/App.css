@@ -37,16 +37,10 @@ html {
  /* position: absolute;  */
  height:100vh;
  width:100vw;
- /* font-size: 206px; */
  perspective:40em; 
  transform: rotateX(-15deg);
  transform-style: preserve-3d; 
 }
-
-/* #solar-system .planet:hover {
-  transform: scale(1.5);
-  box-shadow: 10px 10px 10px 3px white ;
-} */
   
 .planet {
   position:absolute;
@@ -89,8 +83,6 @@ html {
       transform-style: preserve-3d;
       animation: invert infinite linear;
       backface-visibility: hidden;    
-      /* -webkit-filter: blur(8);
-      filter: blur(0); */
     }
 
 #sun .pos{
@@ -192,7 +184,6 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   position: absolute;
   width:2.5em;
   height: 2.5em;
-  border-radius: 50%;
   box-shadow: 0px 0 2px 0.1px ;
   background: url(https://zeyeland.com/frontResources/textures/mars_1k_color.jpg);
   background-size: cover;
@@ -248,11 +239,13 @@ transform: scale(1.5);
 }
 
 #earth .pos,
+#earth.planet,
 #earth.orbit {
 animation-duration: 15s;
 animation-delay: 0.7s;
 }
-#mars.orbit,
+#mars.orbit,  
+#mars.planet,
 #mars .pos {
  animation-duration: 10.35138s; 
  animation-delay: 0.5s; 
@@ -271,7 +264,6 @@ animation-delay: 0.7s;
 dl.infos {
   position: absolute;
   display: block;
-   /* opacity: 10%;  */
   width: 100%;
   height: 100%;
   margin-top: -90%;
@@ -279,19 +271,22 @@ dl.infos {
   padding-left: 100%;
   font-family: 'Rajdhani', sans-serif;
   color: antiquewhite;
+   transform-origin: 100% 100%; 
+ transform-style: preserve-3d;
+ } 
 
-  /* transform-origin: 100% 100%;  */
-  transform-style: preserve-3d;
- }
 .topic{
-  /* box-shadow: inset 0.0em 0.4em 0.5em 0.1em rgb(163, 161, 149);  */
   font-size:1.5em;
-  /* background-color: blueviolet; */
+  padding: 0.2em;
+  
+  /* box-shadow: inset 0.0em 0.4em 0.5em 0.1em rgb(163, 161, 149);  */
+ 
   border-radius: 100px;
 }
 
 .topic:hover{
   background-color:rgb(152, 149, 200);
+  
 color: black ;
 
 }
@@ -314,7 +309,7 @@ dl.infos:before {
   dd{
     position: absolute;
     width: 20vw;
-    font-size: 1.5vw;
+    font-size: 0.9;
     margin-top: 5px;
     color: antiquewhite;
     margin-inline-start: 40px;
