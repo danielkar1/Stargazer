@@ -7,15 +7,21 @@ class PlanetsStore {
   @observable PlanetMode = 'planet';
   @observable Planets = { 'sun': 'orbit', 'mercury': 'orbit', 'mars': 'orbit', 'uranus': `orbit`, 'earth': `orbit` }
   @observable CurrentPlanetClicked = '';
+  @observable ifClicked=false;
   @observable planetsKeyArr = [];
   @observable planetsValueArr = [];
 
   @action planetPop = (e) => {
-   
-if(UserStore.logincompleted==true){
-    if (this.Planets[e] === 'orbit' ){
-      console.log(this.Planets[e])
+    console.log(this.ifClicked)
+  
+    if(this.ifClicked){
+      console.log(this.ifClicked)
       this.Planets[this.CurrentPlanetClicked]='orbit'
+    }
+
+    this.CurrentPlanetClicked = e;
+    if (this.Planets[e] === 'orbit') {
+      console.log("now")
       this.Planets[e] = 'planetbig';
 
     } else {
@@ -27,18 +33,7 @@ if(UserStore.logincompleted==true){
         this.Planets[e] = 'orbit'
       }, 40);
     }
-    this.CurrentPlanetClicked = e;
-
-  }
-}
-  @action contentcontainer = (e) => {
-    document.getElementById(e).style.animation = "popup 4s "
-  }
-
-    @action PlanetsRest =()=> {
-    Object.keys(this.Planets).forEach(key=> {this.Planets[key] = "orbit" });
-    console.log("reset planets")
-    return this.Planets;
+    this.ifClicked=true;
   }
   @action contentcontainer = (e) => {
     document.getElementById(e).style.animation = "popup 4s "

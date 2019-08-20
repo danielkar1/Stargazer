@@ -8,19 +8,14 @@ class Navbartopics extends Component {
 
     onClick = (e) => {
         let planetClicked = e.currentTarget.innerText;
-        this.props.PlanetsStore.Popup(planetClicked)
+        this.props.PlanetsStore.planetPop(planetClicked)
     }
 
 
     render() {
-        console.log(this.props.topics)
         return (
             <div className="topic" type="button" onClick={this.onClick}>{this.props.topic}</div>
-        )
-
-    }
-
-
+        )}
 }
 
 export default Navbartopics;

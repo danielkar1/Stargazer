@@ -8,10 +8,11 @@ class PlanetStore {
 
  @action insertInfo=(e)=>{
      this.planetInfo[name]= ${this.props.PlanetStore[e]}
-     this.planetInfo[type]= "GasPlanet"
+     this.planetInfo[type]= "Gasplanet"
 
  }
 
+ 
 
 }
 
