@@ -89,15 +89,15 @@ class ThreeDstore {
       // corresponding degree of a circle
       var multiplier = firstPercent * 3.6;
 
-      keyframes.appendRule("0% { box-shadow: inset -40px 0 2px rgba(0, 0, 0, 0.5);");
+      keyframes.appendRule("0% { transform: rotateX(90deg) rotateZ(0deg);");
 
-      keyframes.appendRule("25% {  box-shadow: inset 0 100 1px rgba(0, 0, 0, 0.5);");
+      keyframes.appendRule("100% {  transform: rotateX(90deg) rotateZ(360deg);");
 
-      keyframes.appendRule("50% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);");
+      // keyframes.appendRule("50% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);");
 
-      keyframes.appendRule("75% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);}");
-      keyframes.appendRule("75.01% {box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);}");
-      keyframes.appendRule("100% {box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);}");
+      // keyframes.appendRule("75% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);}");
+      // keyframes.appendRule("75.01% {box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);}");
+      // keyframes.appendRule("100% {box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);}");
 
       // Shows the circle again
       // circle.style.display = "inherit";
@@ -132,11 +132,11 @@ class ThreeDstore {
     //   circle.style.display = "none";
     // Initializes change function
     setTimeout(function () {
-      change("shadow-uranus");
+      change("orbit");
     }, 0);
     // }
 
-    let getClosest = (keyframe) => {
+    let getClosest =  (keyframe) => {
       var curr = keyframe[0];
       var diff = Math.abs(this.totalCurrentPercent - curr);
       for (var val = 0, j = keyframe.length; val < j; val++) {

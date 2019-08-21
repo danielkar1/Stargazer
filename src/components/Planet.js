@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import LoginContainer from './LoginContainer';
 import PlanetsStore from './../stores/PlantesStore'
-
+import ThreeDstore from './../stores/ThreeDstore'
 @observer
 
 class Planet extends Component {
 
   popup = (e) => {
    
-    PlanetsStore.planetPop(e.currentTarget.id)
+      ThreeDstore.Get(e.currentTarget.id)
+    // PlanetsStore.planetPop(e.currentTarget.id)
   }
 
   render() {
