@@ -18,6 +18,7 @@ class Universe extends Component {
         
         return <div id="universe">
             <Navbar/>
+            <LoginContainer/>
             <SolarSystem />
             {this.props.UserStore.loginpopup? <User/> : null}
         </div>
