@@ -1,0 +1,14 @@
+
+*{
+    box-sizing: border-box;
+}
+#animProg{
+    font-size: 16px;
+    color: aliceblue;
+}
+.contentcontainer{
+    background-color: aqua; 
+    border: 1px solid #000000;
+    animation: popup 4s linear;
+}
+

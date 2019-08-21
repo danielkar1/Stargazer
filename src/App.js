@@ -7,10 +7,12 @@ import ContentContainer from './components/LoginContainer'
 import Universe from './components/Universe'
 
 @inject('PlanetsStore')
+@inject('ThreeDstore')
 @observer
 class App extends Component {
 
   render() {
+  
     return (
       <Router>
         <Universe />

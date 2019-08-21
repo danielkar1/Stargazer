@@ -5,12 +5,13 @@ import LoginContainer from './LoginContainer'
 import User from './User';
 
 @inject('PlanetsStore')
-@inject('UserStore')
+@inject('UserStore','ThreeDstore')
 @observer
 
 class SolarSystem extends Component{
-
+    
     render(){
+        this.props.ThreeDstore.showPercent()
            return(
         <div id="solar-system" >
             <Planets/>

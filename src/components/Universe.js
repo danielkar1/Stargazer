@@ -10,12 +10,14 @@ import User from './User'
 @inject('UserStore')
 @observer
 
+
+
 class Universe extends Component {
 
     render() {
+        
         return <div id="universe">
             <Navbar/>
-            <LoginContainer/>  
             <SolarSystem />
             {this.props.UserStore.loginpopup? <User/> : null}
         </div>
