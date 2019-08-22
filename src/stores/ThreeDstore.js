@@ -26,19 +26,39 @@ class ThreeDstore {
     //   }
 
     // }
-      let setimer = () => {
-      if (this.currentPercent[id] <= 100) {
-      this.currentPercent[id] += 1;
-          // this.result.innerText = this.currentPercent
-      }
-      else {
-        this.currentPercent[id] = 0;
+  //   console.log(this.currentPercent[id])
+     
+  //     let setimer = (id) => {
+  //       console.log(id)
+  //     if (this.currentPercent[id] <= 100) {
+  //     this.currentPercent[id] += 1;
+  //         // this.result.innerText = this.currentPercent
+  //     }
+  //     else {
+  //       this.currentPercent[id] = 0;
        
+  //     }
+  //   }
+  //   let test=setInterval(function() { setimer(1500)}, this.animationDuration[id])
+     
+  //    console.log("dd")
+        let setimer = (id) => {
+          if (this.currentPercent[id] < 100) {
+            this.currentPercent[id] += 1;
+            console.log(id)
+          }
+          else {
+            this.currentPercent[id] = 0;
+          }
+          // this.result.innerHTML = this.currentPercent[id];
+        }
+        setInterval(() => {
+          setimer(id)
+        }, this.animationDuration[id]);
       }
 
-     setInterval(function() { setimer(id)}, 39)
-  }
-  }
+  
+
   // @action updatePosition(id) {
   //   var position = this.getPosition(id);
 
@@ -56,13 +76,13 @@ class ThreeDstore {
     let animationDuration=this.GetCssAtri(id).animationDuration
     animationDuration=animationDuration.replace('s','0')
     this.animationDuration[id]=parseInt(animationDuration)
-    this.showPercent(id)
+  
   }
 
   @action Get(id) {
 
     this.getAnimeDuration(id)
-
+     this.showPercent(id)
     function findKeyframesRule(rule) {
       let ss = document.styleSheets;
       for (let i = 1; i < ss.length; ++i) {
@@ -123,24 +143,39 @@ class ThreeDstore {
       // circle.style.webkitAnimationName = anim; 
 
       // Resets the approximate animation percent counter
+      
       window.clearInterval(this.showPercent);
-     this.currentPercent[id] = 1;
-      // this.showPercent = () => {
-      //   let setimer = () => {
-      //     if (this.currentPercent < 100) {
-      //       this.currentPercent += 1;
-      //     }
-      //     else {
-      //       this.currentPercent = 0;
-      //     }
-      //   }
-      //   setInterval(() => {
-      //     setimer()
-      //   }, 11);
-      // }
+      // setTimeout(this.showPercent, this.animationDuration[id]);
 
-    }
-
+    //  this.currentPercent[id] = 1;
+    //  let currentPercent=this.currentPercent[id]
+    //  this.showPercent = setInterval(function() {
+    //   if(this.currentPercent[id] < 100)
+    //   {
+    //     currentPercent[id] += 1;
+    //   }
+    //   else {
+    //    currentPercent[id] = 1;
+    //   }
+    //   // result.innerHTML = currentPercent;
+    // }, this.animationDuration[id]); 
+    
+    //   let showPercent = () => {
+    //     let setimer = () => {
+    //       if (this.currentPercent[id] < 100) {
+    //         this.currentPercent[id] += 1;
+    //       }
+    //       else {
+    //         this.currentPercent[id] = 0;
+    //       }
+    //     }
+    //     setInterval(() => {
+    //       setimer()
+    //     }, this.animationDuration[id]);
+    //   }
+    //   showPercent()
+    // }
+  
     // Attatches the change function to the button's
     // onclick function
     // button.onclick = function() {
@@ -170,6 +205,7 @@ class ThreeDstore {
     }
 
   }
+}
 
   @action getPosition(id) {
     console.log(this.currentPercent)

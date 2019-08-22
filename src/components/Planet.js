@@ -9,7 +9,7 @@ class Planet extends Component {
 
   popup = (e) => { 
      PlanetsStore.planetPop(e.currentTarget.id)
-     ThreeDstore.getAnimeDuration(e.currentTarget.id)
+     ThreeDstore.Get(e.currentTarget.id)
   }
 
 //  componentDidMount=()=>{
@@ -25,7 +25,7 @@ class Planet extends Component {
     return <div id={Id} className={PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
         <div className='planet' id={Id} onClick={this.popup} > 
-        <div id="animProg">{ThreeDstore.currentPercent[Id]}ddd</div>
+        <div id="animProg">{ThreeDstore.currentPercent[Id]}%</div>
           {PlanetsStore.Planets[Id]=="planetbig"?<dl className="infos" >
             <dd>this animation been made by pure cssjjj jkjlk kjlkjlk lkjljlk </dd> </dl>:null}
         </div>

@@ -10,7 +10,7 @@ import '../ContentContainer.css'
 class SolarSystem extends Component{
     
     render(){
-        this.props.ThreeDstore.showPercent()
+        // this.props.ThreeDstore.showPercent()
            return(
         <div id="solar-system" >
        
