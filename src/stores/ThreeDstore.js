@@ -6,49 +6,67 @@ import { action, observable, computed } from 'mobx';
 class ThreeDstore {
 
  
-  @observable totalCurrentPercent = 0;
-  @observable currentPercent = 0;
+  @observable totalCurrentPercent = { 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 };
+  @observable currentPercent = { 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 }
   @observable test = 1;
-  @observable result = document.getElementById("animProg");
-  @observable animationDuration=1500;
-  @action showPercent() {
-    let setimer = () => {
-      if (this.currentPercent < 100) {
-        this.currentPercent += 1;
-        console.log(this.currentPercent)
+  @observable result = document.getElementById("animProg")
+  @observable animationDuration={ 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 }
+  @observable showprecent=0
+  @action showPercent(id) {
+    // let setimer = () => {
+    //   if (this.currentPercent[id] <= 100) {
+    //     setTimeout(()=>{this.currentPercent[id] += 1;
+    //       setimer();
+    //       // this.result.innerText = this.currentPercent
+    //     },this.animationDuration[id])
+    //   }
+    //   else {
+    //     this.currentPercent[id] = 0;
+    //     setimer()
+    //   }
+
+    // }
+      let setimer = () => {
+      if (this.currentPercent[id] <= 100) {
+      this.currentPercent[id] += 1;
+          // this.result.innerText = this.currentPercent
       }
       else {
-        this.currentPercent = 0;
+        this.currentPercent[id] = 0;
+       
       }
-      // this.result.innerText=this.currentPercent
-    }
-    setInterval(() => {
-      setimer()
-    }, this.animationDuration);
-    //  document.getElementById("animProg").innerText=this.currentPercent;
-  }
 
-  @action updatePosition(id) {
-    var position = this.getPosition(id);
-
-    alert("The image is located at: " + position.x + ", " + position.y);
+     setInterval(function() { setimer(id)}, 39)
   }
+  }
+  // @action updatePosition(id) {
+  //   var position = this.getPosition(id);
+
+  //   alert("The image is located at: " + position.x + ", " + position.y);
+  // }
 
   @action GetCssAtri(id){
-  
+      console.log(id)
       let idStyle=document.querySelector(`#${id}`)
       let style = getComputedStyle(idStyle)
-      console.log(style.animationDuration)
+      return style
+  }
+
+  @action getAnimeDuration=(id)=>{
+    let animationDuration=this.GetCssAtri(id).animationDuration
+    animationDuration=animationDuration.replace('s','0')
+    this.animationDuration[id]=parseInt(animationDuration)
+    this.showPercent(id)
   }
 
   @action Get(id) {
-    console.log(`your id is ${id}`)
-   let animationDuration=this.GetCssAtri(id)
-    console.log(animationDuration)
+
+    this.getAnimeDuration(id)
+
     function findKeyframesRule(rule) {
-      var ss = document.styleSheets;
-      for (var i = 0; i < ss.length; ++i) {
-        for (var j = 0; j < ss[i].cssRules.length; ++j) {
+      let ss = document.styleSheets;
+      for (let i = 1; i < ss.length; ++i) {
+        for (let j = 0; j < ss[i].cssRules.length; ++j) {
           if (ss[i].cssRules[j].name == rule) { return ss[i].cssRules[j]; }
         }
       }
@@ -69,9 +87,9 @@ class ThreeDstore {
         return str.replace('%', '');
       });
 
-      this.totalCurrentPercent += this.currentPercent;
-      if (this.totalCurrentPercent > 100) {
-        this.totalCurrentPercent -= 100;
+      this.totalCurrentPercent[id] += this.currentPercent[id];
+      if (this.totalCurrentPercent[id] > 100) {
+        this.totalCurrentPercent[id] -= 100;
       }
     
       var closest = getClosest(keys);
@@ -89,15 +107,15 @@ class ThreeDstore {
       // corresponding degree of a circle
       var multiplier = firstPercent * 3.6;
 
-      keyframes.appendRule("0% { transform: rotateX(90deg) rotateZ(0deg);");
+      keyframes.appendRule("0% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5)");
 
-      keyframes.appendRule("100% {  transform: rotateX(90deg) rotateZ(360deg);");
+      keyframes.appendRule("25% {  box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5)");
 
-      // keyframes.appendRule("50% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);");
+      keyframes.appendRule("50% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);");
 
-      // keyframes.appendRule("75% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);}");
-      // keyframes.appendRule("75.01% {box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);}");
-      // keyframes.appendRule("100% {box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);}");
+      keyframes.appendRule("75% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);}");
+      keyframes.appendRule("75.01% {box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);}");
+      keyframes.appendRule("100% {box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);}");
 
       // Shows the circle again
       // circle.style.display = "inherit";
@@ -106,20 +124,20 @@ class ThreeDstore {
 
       // Resets the approximate animation percent counter
       window.clearInterval(this.showPercent);
-      this.currentPercent = 0;
-      this.showPercent = () => {
-        let setimer = () => {
-          if (this.currentPercent < 100) {
-            this.currentPercent += 1;
-          }
-          else {
-            this.currentPercent = 0;
-          }
-        }
-        setInterval(() => {
-          setimer()
-        }, 150);
-      }
+     this.currentPercent[id] = 1;
+      // this.showPercent = () => {
+      //   let setimer = () => {
+      //     if (this.currentPercent < 100) {
+      //       this.currentPercent += 1;
+      //     }
+      //     else {
+      //       this.currentPercent = 0;
+      //     }
+      //   }
+      //   setInterval(() => {
+      //     setimer()
+      //   }, 11);
+      // }
 
     }
 
@@ -132,15 +150,16 @@ class ThreeDstore {
     //   circle.style.display = "none";
     // Initializes change function
     setTimeout(function () {
-      change("orbit");
+      // change(`#${id}.orbit`);
+      change('shadow-uranus')
     }, 0);
     // }
 
-    let getClosest =  (keyframe) => {
+    let getClosest = (keyframe) => {
       var curr = keyframe[0];
-      var diff = Math.abs(this.totalCurrentPercent - curr);
+      var diff = Math.abs(this.totalCurrentPercent[id] - curr);
       for (var val = 0, j = keyframe.length; val < j; val++) {
-        var newdiff = Math.abs(this.totalCurrentPercent - keyframe[val]);
+        var newdiff = Math.abs(this.totalCurrentPercent[id] - keyframe[val]);
         if (newdiff < diff) {
           diff = newdiff;
           curr = keyframe[val];

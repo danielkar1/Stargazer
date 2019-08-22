@@ -227,14 +227,14 @@ transform: scale(1.5);
 #mercury .pos,
 #mercury.orbit{
   animation-duration: 3s;
-  animation-delay: 0.3s;
+  /* animation-delay: 0.3s; */
 }
 
 #uranus .pos,
 #uranus .planet,
 #uranus.orbit {
- animation-duration: 7.35138s; 
- animation-delay: 0.5s; 
+ animation-duration: 70s; 
+ /* animation-delay: 0.5s;  */
 
 }
 
@@ -242,13 +242,13 @@ transform: scale(1.5);
 #earth.planet,
 #earth.orbit {
 animation-duration: 15s;
-animation-delay: 0.7s;
+/* animation-delay: 0.7s; */
 }
 #mars.orbit,  
 #mars.planet,
 #mars .pos {
- animation-duration: 10.35138s; 
- animation-delay: 0.5s; 
+ animation-duration: 10s; 
+ /* animation-delay: 0.5s;  */
 }
 .navbar{
   display: flex; 

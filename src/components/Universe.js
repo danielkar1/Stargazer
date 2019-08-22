@@ -6,7 +6,7 @@ import LoginContainer from './LoginContainer'
 import Navbar from './Navbar'
 import User from './User'
 
-@inject('PlanetsStore')
+@inject('PlanetsStore','ThreeDstore')
 @inject('UserStore')
 @observer
 
@@ -19,6 +19,7 @@ class Universe extends Component {
         return <div id="universe">
             <Navbar/>
             <LoginContainer/>
+            {/* <div id="animProg">{this.props.ThreeDstore.currentPercent}ddd</div> */}
             <SolarSystem />
             {this.props.UserStore.loginpopup? <User/> : null}
         </div>

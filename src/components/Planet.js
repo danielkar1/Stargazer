@@ -7,17 +7,25 @@ import ThreeDstore from './../stores/ThreeDstore'
 
 class Planet extends Component {
 
-  popup = (e) => {
-   
-      ThreeDstore.Get(e.currentTarget.id)
-    // PlanetsStore.planetPop(e.currentTarget.id)
+  popup = (e) => { 
+     PlanetsStore.planetPop(e.currentTarget.id)
+     ThreeDstore.getAnimeDuration(e.currentTarget.id)
   }
 
+//  componentDidMount=()=>{
+//    let planet=PlanetsStore.planetsKeyArr
+//    console.log(planet)
+//    planet.forEach(element => {
+//    ThreeDstore.Get(element) 
+//  });
+//  }
   render() {
+   
     let Id = this.props.planetsKeyArr
     return <div id={Id} className={PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
-        <div className='planet' id={Id} onClick={this.popup} >
+        <div className='planet' id={Id} onClick={this.popup} > 
+        <div id="animProg">{ThreeDstore.currentPercent[Id]}ddd</div>
           {PlanetsStore.Planets[Id]=="planetbig"?<dl className="infos" >
             <dd>this animation been made by pure cssjjj jkjlk kjlkjlk lkjljlk </dd> </dl>:null}
         </div>

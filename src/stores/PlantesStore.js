@@ -40,15 +40,7 @@ if(UserStore.logincompleted==true){
     console.log("reset planets")
     return this.Planets;
   }
-  @action contentcontainer = (e) => {
-    document.getElementById(e).style.animation = "popup 4s "
-  }
-
-    @action PlanetsRest =()=> {
-    Object.keys(this.Planets).forEach(key=> {this.Planets[key] = "orbit" });
-    console.log("reset planets")
-    return this.Planets;
-  }
+  
 
   @action getArray = () => {
 

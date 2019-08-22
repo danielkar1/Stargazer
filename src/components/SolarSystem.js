@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import Planets from './Planets'
-import LoginContainer from './LoginContainer'
-import User from './User';
+import '../ContentContainer.css'
 
 @inject('PlanetsStore')
 @inject('UserStore','ThreeDstore')
@@ -14,6 +13,8 @@ class SolarSystem extends Component{
         this.props.ThreeDstore.showPercent()
            return(
         <div id="solar-system" >
+       
+            
             <Planets/>
             </div> 
        
