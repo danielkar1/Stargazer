@@ -12,13 +12,7 @@ class Planet extends Component {
      ThreeDstore.Get(e.currentTarget.id)
   }
 
-//  componentDidMount=()=>{
-//    let planet=PlanetsStore.planetsKeyArr
-//    console.log(planet)
-//    planet.forEach(element => {
-//    ThreeDstore.Get(element) 
-//  });
-//  }
+
   render() {
    
     let Id = this.props.planetsKeyArr
@@ -34,6 +28,24 @@ class Planet extends Component {
 
 
   }
-}
+
+  componentDidMount=()=>{
+    let planet=PlanetsStore.planetsKeyArr
+    console.log(planet)
+    planet.forEach(element => { this.myInterval=setInterval(function() { ThreeDstore.showPercent(element)}, ThreeDstore.getAnimeDuration(element))
+  });
+  planet.forEach(element => { setTimeout(clearInterval(this.myInterval), ThreeDstore.getAnimeDuration(element))
+});
+  // console.log(planet)
+  // let element="earth"
+  // this.myInterval=setInterval(function() { ThreeDstore.showPercent(element)}, ThreeDstore.getAnimeDuration(element))
+   }
+   
+//    componentWillUnmount=()=>{
+//      clearInterval(this.myInterval)
+//      console.log("clear")
+//    }
+ 
+ }
 
 export default Planet;

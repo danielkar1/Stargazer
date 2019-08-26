@@ -10,12 +10,12 @@ import LoginContainer from './LoginContainer';
 
 class Planets extends Component {
    
-    loadStars=()=>{
+
+    componentDidMount=()=>{
         this.props.PlanetsStore.getArray()
     }
-
     render() {
-        this.loadStars()
+       
         let planetsKeyArr=this.props.PlanetsStore.planetsKeyArr;
         let planetsValueArr=this.props.PlanetsStore.planetsValueArr;
         return (

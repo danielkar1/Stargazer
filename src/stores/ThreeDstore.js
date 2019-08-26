@@ -1,6 +1,6 @@
 import { observer, inject } from 'mobx-react';
 
-import { action, observable, computed } from 'mobx';
+import { action, observable, computed, set } from 'mobx';
 
 
 class ThreeDstore {
@@ -9,39 +9,15 @@ class ThreeDstore {
   @observable totalCurrentPercent = { 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 };
   @observable currentPercent = { 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 }
   @observable test = 1;
-  @observable result = document.getElementById("animProg")
+  // @observable result = document.getElementById("animProg")
   @observable animationDuration={ 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 }
   @observable showprecent=0
+  @observable intervalId=0
   @action showPercent(id) {
-    // let setimer = () => {
-    //   if (this.currentPercent[id] <= 100) {
-    //     setTimeout(()=>{this.currentPercent[id] += 1;
-    //       setimer();
-    //       // this.result.innerText = this.currentPercent
-    //     },this.animationDuration[id])
-    //   }
-    //   else {
-    //     this.currentPercent[id] = 0;
-    //     setimer()
-    //   }
-
-    // }
-  //   console.log(this.currentPercent[id])
-     
-  //     let setimer = (id) => {
-  //       console.log(id)
-  //     if (this.currentPercent[id] <= 100) {
-  //     this.currentPercent[id] += 1;
-  //         // this.result.innerText = this.currentPercent
-  //     }
-  //     else {
-  //       this.currentPercent[id] = 0;
-       
-  //     }
-  //   }
   //   let test=setInterval(function() { setimer(1500)}, this.animationDuration[id])
      
   //    console.log("dd")
+ 
         let setimer = (id) => {
           if (this.currentPercent[id] < 100) {
             this.currentPercent[id] += 1;
@@ -52,18 +28,15 @@ class ThreeDstore {
           }
           // this.result.innerHTML = this.currentPercent[id];
         }
-        setInterval(() => {
-          setimer(id)
-        }, this.animationDuration[id]);
+    // this.intervalId=setInterval(() => {
+    // setimer(id)
+    //   }, this.animationDuration[id]);
+
+    //   console.log(this.intervalId)
+
+     setimer(id)
+        
       }
-
-  
-
-  // @action updatePosition(id) {
-  //   var position = this.getPosition(id);
-
-  //   alert("The image is located at: " + position.x + ", " + position.y);
-  // }
 
   @action GetCssAtri(id){
       console.log(id)
@@ -76,13 +49,13 @@ class ThreeDstore {
     let animationDuration=this.GetCssAtri(id).animationDuration
     animationDuration=animationDuration.replace('s','0')
     this.animationDuration[id]=parseInt(animationDuration)
-  
+    return this.animationDuration[id]
   }
 
   @action Get(id) {
 
-    this.getAnimeDuration(id)
-     this.showPercent(id)
+     this.getAnimeDuration(id)
+    
     function findKeyframesRule(rule) {
       let ss = document.styleSheets;
       for (let i = 1; i < ss.length; ++i) {
@@ -94,7 +67,7 @@ class ThreeDstore {
     }
 
     let change = (anim) => {
-
+  
       var keyframes = findKeyframesRule(anim),
         length = keyframes.cssRules.length;
 
@@ -110,18 +83,15 @@ class ThreeDstore {
       this.totalCurrentPercent[id] += this.currentPercent[id];
       if (this.totalCurrentPercent[id] > 100) {
         this.totalCurrentPercent[id] -= 100;
-      }
-    
+      }  
       var closest = getClosest(keys);
 
       var position = keys.indexOf(closest),
         firstPercent = keys[position];
-
-      // Removes the current rules of the specified 
-      // animation
       for (var i = 0, j = keyframeString.length; i < j; i++) {
         keyframes.deleteRule(keyframeString[i]);
       }
+     
 
       // Turns the percent when activated into the
       // corresponding degree of a circle
@@ -136,17 +106,13 @@ class ThreeDstore {
       keyframes.appendRule("75% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);}");
       keyframes.appendRule("75.01% {box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);}");
       keyframes.appendRule("100% {box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);}");
-
-      // Shows the circle again
-      // circle.style.display = "inherit";
-      // Sets the animation to the newly specified rules 
-      // circle.style.webkitAnimationName = anim; 
-
+    }
       // Resets the approximate animation percent counter
       
-      window.clearInterval(this.showPercent);
-      // setTimeout(this.showPercent, this.animationDuration[id]);
-
+      ;
+      console.log("ss")
+      //  setTimeout( clearInterval(this.intervalId), 1000);
+      this.currentPercent[id]=1;
     //  this.currentPercent[id] = 1;
     //  let currentPercent=this.currentPercent[id]
     //  this.showPercent = setInterval(function() {
@@ -159,37 +125,12 @@ class ThreeDstore {
     //   }
     //   // result.innerHTML = currentPercent;
     // }, this.animationDuration[id]); 
-    
-    //   let showPercent = () => {
-    //     let setimer = () => {
-    //       if (this.currentPercent[id] < 100) {
-    //         this.currentPercent[id] += 1;
-    //       }
-    //       else {
-    //         this.currentPercent[id] = 0;
-    //       }
-    //     }
-    //     setInterval(() => {
-    //       setimer()
-    //     }, this.animationDuration[id]);
-    //   }
-    //   showPercent()
-    // }
-  
-    // Attatches the change function to the button's
-    // onclick function
-    // button.onclick = function() {
-    //   // Removes the animation so a new one can be set
-    //   circle.style.webkitAnimationName = "none";
-    //   // Temporarily hides the circle
-    //   circle.style.display = "none";
-    // Initializes change function
+ 
     setTimeout(function () {
-      // change(`#${id}.orbit`);
+     
       change('shadow-uranus')
-    }, 0);
-    // }
-
+    }, 11);
+    
     let getClosest = (keyframe) => {
       var curr = keyframe[0];
       var diff = Math.abs(this.totalCurrentPercent[id] - curr);
@@ -204,7 +145,7 @@ class ThreeDstore {
       return curr;
     }
 
-  }
+  
 }
 
   @action getPosition(id) {
