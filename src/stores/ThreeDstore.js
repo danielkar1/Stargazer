@@ -11,31 +11,28 @@ class ThreeDstore {
   @observable test = 1;
   // @observable result = document.getElementById("animProg")
   @observable animationDuration={ 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 }
-  @observable showprecent=0
-  @observable intervalId=0
+  @action getAnimeDuration=(id)=>{
+    let animationDuration=this.GetCssAtri(id).animationDuration
+    animationDuration=animationDuration.replace('s','0')
+    this.animationDuration[id]=parseInt(animationDuration)
+    
+    return this.animationDuration[id]
+  }
+
   @action showPercent(id) {
-  //   let test=setInterval(function() { setimer(1500)}, this.animationDuration[id])
-     
-  //    console.log("dd")
- 
+        let totalDuration = this.getAnimeDuration(id)
         let setimer = (id) => {
           if (this.currentPercent[id] < 100) {
-            this.currentPercent[id] += 1;
-            console.log(id)
+            this.currentPercent[id] += 1;        
           }
           else {
             this.currentPercent[id] = 0;
           }
           // this.result.innerHTML = this.currentPercent[id];
         }
-    // this.intervalId=setInterval(() => {
-    // setimer(id)
-    //   }, this.animationDuration[id]);
-
-    //   console.log(this.intervalId)
-
-     setimer(id)
-        
+    return setInterval(() => {
+    setimer(id)},  totalDuration);
+      // }, this.animationDuration[id]);     
       }
 
   @action GetCssAtri(id){
@@ -45,17 +42,11 @@ class ThreeDstore {
       return style
   }
 
-  @action getAnimeDuration=(id)=>{
-    let animationDuration=this.GetCssAtri(id).animationDuration
-    animationDuration=animationDuration.replace('s','0')
-    this.animationDuration[id]=parseInt(animationDuration)
-    return this.animationDuration[id]
-  }
+
 
   @action Get(id) {
 
      this.getAnimeDuration(id)
-    
     function findKeyframesRule(rule) {
       let ss = document.styleSheets;
       for (let i = 1; i < ss.length; ++i) {
@@ -111,17 +102,19 @@ class ThreeDstore {
       
       ;
       console.log("ss")
-      //  setTimeout( clearInterval(this.intervalId), 1000);
+    clearInterval(this.intervalId)
       this.currentPercent[id]=1;
+      let percent=this.currentPercent[id]
     //  this.currentPercent[id] = 1;
     //  let currentPercent=this.currentPercent[id]
     //  this.showPercent = setInterval(function() {
-    //   if(this.currentPercent[id] < 100)
+    
+    //   if(percent < 100)
     //   {
-    //     currentPercent[id] += 1;
+    //     percent += 1;
     //   }
     //   else {
-    //    currentPercent[id] = 1;
+    //     percent = 1;
     //   }
     //   // result.innerHTML = currentPercent;
     // }, this.animationDuration[id]); 

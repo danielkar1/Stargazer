@@ -6,7 +6,10 @@ import ThreeDstore from './../stores/ThreeDstore'
 @observer
 
 class Planet extends Component {
-
+  constructor(props) {
+    super(props);
+    this.intervalID = 0;
+  }
   popup = (e) => { 
      PlanetsStore.planetPop(e.currentTarget.id)
      ThreeDstore.Get(e.currentTarget.id)
@@ -30,21 +33,15 @@ class Planet extends Component {
   }
 
   componentDidMount=()=>{
-    let planet=PlanetsStore.planetsKeyArr
-    console.log(planet)
-    planet.forEach(element => { this.myInterval=setInterval(function() { ThreeDstore.showPercent(element)}, ThreeDstore.getAnimeDuration(element))
-  });
-  planet.forEach(element => { setTimeout(clearInterval(this.myInterval), ThreeDstore.getAnimeDuration(element))
-});
-  // console.log(planet)
-  // let element="earth"
-  // this.myInterval=setInterval(function() { ThreeDstore.showPercent(element)}, ThreeDstore.getAnimeDuration(element))
+    let Id = this.props.planetsKeyArr
+    this.intervalID =  ThreeDstore.showPercent(Id);
+     console.log(Id)
    }
+
    
-//    componentWillUnmount=()=>{
-//      clearInterval(this.myInterval)
-//      console.log("clear")
-//    }
+   componentWillUnmount=()=>{
+     clearInterval(this.intervalID)
+   }
  
  }
 
