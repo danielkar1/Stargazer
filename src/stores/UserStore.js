@@ -15,17 +15,17 @@ class UserStore{
 
     @action ActivatePopup=()=>{
     
-        if(this.loginpopup){
-            if(this.userName!==''&&this.userLastName!==''&& this.userPlanet!==''){
-            this.loginpopup=false;
-            this.logincompleted=true                
-        }else{
-                alert("something missing, please surrender to the system")
-            }         
-        }else{
+        // if(this.loginpopup){
+        //     if(this.userName!==''&&this.userLastName!==''&& this.userPlanet!==''){
+        //     this.loginpopup=false;
+        //     this.logincompleted=true                
+        // }else{
+        //         alert("something missing, please surrender to the system")
+        //     }         
+        // }else{
             this.loginpopup=true;
             // PlantesStore.Planets[PlantesStore.CurrentPlanetClicked]='orbit'
-        }
+        // }
     
     }
 

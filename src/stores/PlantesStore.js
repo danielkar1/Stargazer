@@ -12,7 +12,7 @@ class PlanetsStore {
 
   @action planetPop = (e) => {
    
-if(UserStore.logincompleted==true){
+// if(UserStore.logincompleted==true){
     if (this.Planets[e] === 'orbit' ){
       console.log(this.Planets[e])
       this.Planets[this.CurrentPlanetClicked]='orbit'
@@ -29,7 +29,7 @@ if(UserStore.logincompleted==true){
     }
     this.CurrentPlanetClicked = e;
 
-  }
+  // }
 }
   @action contentcontainer = (e) => {
     document.getElementById(e).style.animation = "popup 4s "

@@ -22,10 +22,10 @@ class Planet extends Component {
     return <div id={Id} className={PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
         <div className='planet' id={Id} onClick={this.popup} > 
-        <div id="animProg">{ThreeDstore.currentPercent[Id]}%</div>
           {PlanetsStore.Planets[Id]=="planetbig"?<dl className="infos" >
             <dd>this animation been made by pure cssjjj jkjlk kjlkjlk lkjljlk </dd> </dl>:null}
         </div>
+        <dd>{ThreeDstore.currentPercent[Id]}%</dd>
       </div>
     </div>
 

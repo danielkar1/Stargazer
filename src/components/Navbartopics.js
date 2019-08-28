@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import './../LoginContainer.css';
-@inject('PlanetsStore')
+import ThreeDstore from '../stores/ThreeDstore';
+@inject('PlanetsStore','ThreeDstore')
 @observer
 
 class Navbartopics extends Component {
@@ -13,8 +14,11 @@ class Navbartopics extends Component {
 
 
     render() {
+        let planetName=this.props.topic
         return (
-            <div className="topic" type="button" onClick={this.onClick}>{this.props.topic}</div>
+        
+            <div className="topic" type="button" onClick={this.onClick}>{planetName}</div>
+    
         )}
 }
 
