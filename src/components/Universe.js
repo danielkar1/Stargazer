@@ -6,6 +6,7 @@ import LoginContainer from './LoginContainer'
 import './../LoginContainer.css';
 import Navbar from './Navbar'
 import User from './User'
+import Calendar from './Calendar';
 
 @inject('PlanetsStore','ThreeDstore')
 @inject('UserStore')
@@ -18,7 +19,7 @@ class Universe extends Component {
     render() {
         
         return <div id="universe">
-            {this.props.UserStore.loginpopup? <div>  <Navbar/>  <SolarSystem/>  </div> : <LoginContainer/>}
+            {this.props.UserStore.loginpopup? <div>  <Navbar/>  <SolarSystem/> <Calendar/>    </div> : <LoginContainer/>}
         </div>
 
     }

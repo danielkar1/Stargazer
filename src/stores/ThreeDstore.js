@@ -6,11 +6,12 @@ import { action, observable, computed, set } from 'mobx';
 class ThreeDstore {
 
  
-  @observable totalCurrentPercent = { 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 };
+  @observable totalCurrentPercent = {  'mercury': 0, 'mars': 0, 'uranus': 0, 'earth': 0 };
+  @observable yearCounter= { 'mercury': 0, 'mars': 0, 'uranus': 0, 'earth': 0 };
   @observable currentPercent = { 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 }
   @observable test = 1;
-  // @observable result = document.getElementById("animProg")
-  @observable animationDuration={ 'sun': 1, 'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 }
+  @observable animationDuration={  'mercury': 1, 'mars': 1, 'uranus': 1, 'earth': 1 }
+
   @action getAnimeDuration=(id)=>{
     let animationDuration=this.GetCssAtri(id).animationDuration
     animationDuration=animationDuration.replace('s','0')
@@ -26,6 +27,7 @@ class ThreeDstore {
             this.currentPercent[id] += 1;        
           }
           else {
+            this.yearCounter[id]+=1
             this.currentPercent[id] = 0;
           }
           // this.result.innerHTML = this.currentPercent[id];
@@ -101,23 +103,8 @@ class ThreeDstore {
       // Resets the approximate animation percent counter
       
       ;
-      console.log("ss")
     clearInterval(this.intervalId)
       this.currentPercent[id]=1;
-      let percent=this.currentPercent[id]
-    //  this.currentPercent[id] = 1;
-    //  let currentPercent=this.currentPercent[id]
-    //  this.showPercent = setInterval(function() {
-    
-    //   if(percent < 100)
-    //   {
-    //     percent += 1;
-    //   }
-    //   else {
-    //     percent = 1;
-    //   }
-    //   // result.innerHTML = currentPercent;
-    // }, this.animationDuration[id]); 
  
     setTimeout(function () {
      

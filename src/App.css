@@ -17,13 +17,12 @@ html {
 
 #universe {
  z-index: 1; 
- transform:scale(1.);
   position: relative;
   /* background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat center center fixed;  */
   ;
   width: 100vm;
   height: 100vh;
-   font-size: 27px; 
+   /* font-size: 27px;  */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -209,10 +208,10 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 }
 
 
-.planetbig .pos{
+.planetbig .pos{  
   padding: 4.2em;
  position: absolute;
- top:5em;
+ top: 0em;
  left:0em;
  margin: 2em;
  margin-top: 3em;
@@ -270,12 +269,10 @@ dl.infos {
   height: 100%;
   margin-top: -90%;
   margin-left: 90%;
-  padding-left: 100%;
+   padding-left: 100%;
   font-family: 'Rajdhani', sans-serif;
   color: antiquewhite;
-   transform-origin: 100% 100%; 
- transform-style: preserve-3d;
- } 
+ }  
 
 .topic{
   font-size:1.5em;
@@ -400,22 +397,22 @@ to{
       @media screen and (min-width: 300px) {
         #universe,
         #popup {
-          font-size:  60%; } }
+          font-size:  100%; } }
       @media screen and (min-width: 500px) {
         #universe {
           font-size: 62%; } }
       @media screen and (min-width: 600px) {
-        #universe,
-        #solar-system {
-          font-size: 100%; } }
+        #universe
+        {
+          font-size: 85%; } }
       @media screen and (min-width: 760px) {
         #universe 
         #solar-system{
           font-size:70%; } }
-      @media screen and (min-width: 1000px) {
+      /* @media screen and (min-width: 1000px) {
         #universe {
           font-size: 73%; }
-        }
+        } */
         @media screen and (min-width: 1300px) {
           #universe {
             font-size: 100%; } }

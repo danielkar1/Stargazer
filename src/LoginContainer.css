@@ -48,7 +48,7 @@
     justify-content:space-evenly; */
     width: 90vw;
     height: 90vh;
-   font: 400 2.5vw/1.5 "Neuton";
+   font: 400 2vw/1.5 "Neuton";
   color: white;
      text-align: center; 
      margin: 0 
@@ -92,7 +92,7 @@ p {
 /* Animate Background Image */
 
 	  -webkit-text-fill-color: transparent;
-	  -webkit-animation: aitf 80s linear infinite;
+	  -webkit-animation: aitf 40s linear infinite;
 
 /* Activate hardware acceleration for smoother animations */
 
@@ -111,11 +111,12 @@ p {
 
 #calendar{
   display:grid;
-  margin-left:12vw;
-  grid-column-gap: 1em;
-  opacity: 0.7;
-  /* align-content: center; */
-  font-size: 2em;
+  margin-left: auto;
+    grid-column-gap: 1em;
+    opacity: 0.7;
+    top: 27em;
+  font-size: 1.2em;
+  
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   /* grid-template-rows: auto;   */
   /* grid-template-rows: 1fr,1fr; */
@@ -127,7 +128,7 @@ p {
 
 .calendaritem >div{
   display: grid;
-  border-bottom: whitesmoke 2px double;
+  border-bottom: whitesmoke 2px solid;
   
   /* border: whitesmoke 2px double; */
 }
@@ -140,7 +141,7 @@ p {
 
     @media screen and (max-width: 600px) {
        #LoginContainer {
-        font-size:  250%;
+        font-size:  150%;
         
       }
       

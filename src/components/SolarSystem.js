@@ -16,7 +16,7 @@ class SolarSystem extends Component{
            return(
         <div id="solar-system" >  
             <Planets/>
-            <Calendar/>
+            {/* <Calendar/> */}
             </div> 
        
            )}
