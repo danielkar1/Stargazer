@@ -14,7 +14,6 @@ class Calendar extends Component{
        
         let planets = this.props.PlanetsStore.planetsKeyArr;
         //  delete planets[0]
-
         return (
           <div id='calendar'> {planets.map((planet, index) => <CalendarItem planet={planet} />)} </div>
            )

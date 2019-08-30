@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Planets from './Planets'
 import { observer, inject } from 'mobx-react';
 import SolarSystem from './SolarSystem';
 import LoginContainer from './LoginContainer'
 import './../LoginContainer.css';
 import Navbar from './Navbar'
-import User from './User'
 import Calendar from './Calendar';
+import PlanetsInfo from './PlanetsInfo';
 
 @inject('PlanetsStore','ThreeDstore')
 @inject('UserStore')

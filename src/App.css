@@ -263,7 +263,8 @@ animation-duration: 15s;
 
 /* INFO CSS */
 dl.infos {
-  position: absolute;
+  position: fixed;
+    float:center;
   display: block;
   width: 100%;
   height: 100%;
@@ -302,16 +303,20 @@ dl.infos:before {
   border-left: 1px solid white;
   transform-style: preserve-3d;
   transform: skew(-45deg, 0deg);
+  /* position: fixed;
+  float:center; */
 
   }
 
   dd{
-    position: absolute;
+   
     width: 20vw;
     font-size: 0.9;
     margin-top: 5px;
     color: antiquewhite;
     margin-inline-start: 40px;
+    position: fixed;
+    float:center;
     
    }
   
@@ -416,4 +421,8 @@ to{
         @media screen and (min-width: 1300px) {
           #universe {
             font-size: 100%; } }
+
+            /* @media screen and (min-width: 360) {
+              .planetbig .pos {
+                font-size:10%; } } */
     

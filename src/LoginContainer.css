@@ -55,6 +55,12 @@
 
 }
 
+.planetInfo{
+  color:white;
+  right:50%;
+  left:50%
+}
+
 #enter{
   position: relative;
   display: -webkit-inline-box;
