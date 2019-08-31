@@ -37,17 +37,8 @@
 
 
 #LoginContainer{
-    /* width: 50%;
-    height: 50%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    font-size: 2em;
-  vertical-align: middle;
-    justify-content:space-evenly; */
     width: 90vw;
-    height: 90vh;
+    height: 100vh;
    font: 400 2vw/1.5 "Neuton";
   color: white;
      text-align: center; 
@@ -56,9 +47,14 @@
 }
 
 .planetInfo{
-  color:white;
-  right:50%;
-  left:50%
+  position: absolute;
+  width: 28vw;
+  height: 25vw;
+  height: fit-content;
+  font-size: 1.2em;
+  padding-left: auto;
+  color: white;
+ 
 }
 
 #enter{

@@ -10,11 +10,16 @@ import PlanetsInfo from './PlanetsInfo'
 @observer
 
 class SolarSystem extends Component{
+
+    // drunkMode = (e) => { 
+      
+    //    this.props.ThreeDstore.Get("orbit")
+    //  }
     
     render(){
            return(
         <div id="solar-system" > 
-          
+            {/* <button onClick={this.drunkMode}>Drunk mode</button> */}
             <Planets/>
            
             </div> 

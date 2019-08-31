@@ -14,7 +14,6 @@ class PlanetsStore {
    
 // if(UserStore.logincompleted==true){
     if (this.Planets[e] === 'orbit' ){
-      console.log(this.Planets[e])
       this.Planets[this.CurrentPlanetClicked]='orbit'
       this.Planets[e] = 'planetbig';
 
@@ -35,11 +34,11 @@ class PlanetsStore {
     document.getElementById(e).style.animation = "popup 4s "
   }
 
-    @action PlanetsRest =()=> {
-    Object.keys(this.Planets).forEach(key=> {this.Planets[key] = "orbit" });
-    console.log("reset planets")
-    return this.Planets;
-  }
+  //   @action PlanetsRest =()=> {
+  //   Object.keys(this.Planets).forEach(key=> {this.Planets[key] = "orbit" });
+  //   console.log("reset planets")
+  //   return this.Planets;
+  // }
   
 
   @action getArray = () => {

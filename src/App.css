@@ -34,10 +34,11 @@ html {
 }
 
 #solar-system{
- /* position: absolute;  */
- height:100vh;
- width:100vw;
- perspective:40em; 
+ position: relative; 
+ height: 90vh;
+ width: 90vw;
+ left: 0.8em;
+ perspective:45em; 
  transform: rotateX(-15deg);
  transform-style: preserve-3d; 
 }
@@ -48,9 +49,8 @@ html {
   background-color: #202020; 
   background-repeat: no-repeat;
   margin: auto;
- font-size: 12px;
-
-  top: 0;
+  font-size: 14px;
+   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -66,7 +66,7 @@ html {
   left: 50%;
   border:1px solid white;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 13px;
   transform-style: preserve-3d;
   animation: orbit; 
   animation-iteration-count: infinite; 
@@ -98,8 +98,8 @@ position: absolute;
 }
  
  #uranus .pos {
-z-index: 4;
 position: absolute;
+z-index: 4;
 
 } 
 
@@ -161,6 +161,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 }
 
 #mercury .planet {
+  
   width: 0.5em;
   height: 0.5em;
   z-index: 3;
@@ -168,32 +169,30 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite;
 }
 #earth .planet {
-  
-  position: absolute;
-  width:3em;
+   width:3em;
   height: 3em;
   z-index:4;
   box-shadow: 0px 0 2px 0.1px ;
   background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg);
   background-size: cover;
-  animation: shadow-uranus 30s linear infinite, spin 15s linear alternate infinite;
+  animation: shadow-uranus 30s linear infinite, spin 10s linear alternate infinite;
 }
 
 #mars .planet {
-  
-  position: absolute;
+ 
   width:2.5em;
   height: 2.5em;
   box-shadow: 0px 0 2px 0.1px ;
   background: url(https://zeyeland.com/frontResources/textures/mars_1k_color.jpg);
   background-size: cover;
-  animation: shadow-uranus 35s linear infinite, spin 15s linear alternate infinite;
+  animation: shadow-uranus 35s linear infinite, spin 10s linear alternate infinite;
 }
 
 #sun .planet {
+  position: absolute;;
   width: 7em;
   height: 7em;
-  position: fixed;
+  
   top: 0;
   bottom: 0;
   left: 0;
@@ -203,25 +202,30 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   border-radius: 50%;
    box-shadow:  0 0 15px 2px rgb(248, 224, 2); 
   background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Map_of_the_full_sun.jpg/640px-Map_of_the_full_sun.jpg);
-  animation:sun-aura 1.5s linear alternate infinite,spin 30s linear alternate infinite;
+  animation:sun-aura 1.5s linear alternate infinite,spin 15s linear alternate infinite;
   background-size: cover;
 }
 
 
 .planetbig .pos{  
+  position: absolute;
   padding: 4.2em;
- position: absolute;
- top: 0em;
- left:0em;
- margin: 2em;
- margin-top: 3em;
-animation: linear infinite;  
+  top: 1em;
+  left:0em;
+  margin: 2em;
+  margin-top: 3em;
+  animation: linear infinite;  
+  /* transform-origin: 0% 100%; */
 }
 
 .planetbig .planet {
- position: absolute;
-transform: scale(1.5);  
+  /* position: absolute; */
+  transform: scale(1.5);
+  /* transform: translate3d(-3em, -1em, 2px); */
+/* transform: perspective(1px) translateZ(1px);  */
  animation: shadow-uranus linear infinite;
+ 
+ 
 }
 
 #mercury .pos,
@@ -231,7 +235,6 @@ transform: scale(1.5);
 }
 
 #uranus .pos,
-#uranus .planet,
 #uranus.orbit {
  animation-duration: 70s; 
  /* animation-delay: 0.5s;  */
@@ -239,13 +242,11 @@ transform: scale(1.5);
 }
 
 #earth .pos,
-#earth.planet,
 #earth.orbit {
-animation-duration: 15s;
+animation-duration: 36s;
 /* animation-delay: 0.7s; */
 }
 #mars.orbit,  
-#mars.planet,
 #mars .pos {
  animation-duration: 10s; 
  /* animation-delay: 0.5s;  */
@@ -262,18 +263,7 @@ animation-duration: 15s;
 }
 
 /* INFO CSS */
-dl.infos {
-  position: fixed;
-    float:center;
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin-top: -90%;
-  margin-left: 90%;
-   padding-left: 100%;
-  font-family: 'Rajdhani', sans-serif;
-  color: antiquewhite;
- }  
+
 
 .topic{
   font-size:1.5em;
@@ -290,12 +280,26 @@ dl.infos {
 color: black ;
 
 }
-
+dl.infos {
+  position: fixed;
+  float:center;
+  display: block;
+  color: antiquewhite;
+  width: 100%;
+  height: 100%;
+  margin-top: -90%;
+  margin-left: 90%;
+   /* padding-left: 100%; */
+  font-family: 'Rajdhani', sans-serif;
+  color: antiquewhite;
+ }  
 
 dl.infos:before {
   position: absolute;
+  color: antiquewhite;
+
   content: ''; 
-  width: 5em;
+  width: 6em;
   height: 3em;
   left: 1em;
   bottom: 0;
@@ -303,22 +307,29 @@ dl.infos:before {
   border-left: 1px solid white;
   transform-style: preserve-3d;
   transform: skew(-45deg, 0deg);
-  /* position: fixed;
-  float:center; */
+ 
 
   }
+  dl.infos dt {
+    position: absolute;
+    left: 50px;
+    margin-bottom: 26px;
+    bottom: 15px;
+    color: #FFF;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px black; }
 
-  dd{
-   
-    width: 20vw;
-    font-size: 0.9;
-    margin-top: 5px;
-    color: antiquewhite;
-    margin-inline-start: 40px;
-    position: fixed;
-    float:center;
-    
-   }
+  
+  dl.infos dd dt {
+    /* position: absolute; */
+    left: 50px;
+    bottom: -2px;
+    width: 300px;
+    color: #FFF;
+    font-size: 11px;
+    text-shadow: 1px 1px 2px black; 
+  }
+  
   
 
 
@@ -398,7 +409,7 @@ to{
 
       @media screen and (max-width: 299px) {
         #universe {
-          font-size: 50%; } }
+          font-size: 83%; } }
       @media screen and (min-width: 300px) {
         #universe,
         #popup {
@@ -409,11 +420,11 @@ to{
       @media screen and (min-width: 600px) {
         #universe
         {
-          font-size: 85%; } }
+          font-size: 100%; } }
       @media screen and (min-width: 760px) {
         #universe 
         #solar-system{
-          font-size:70%; } }
+          font-size:100%; } }
       /* @media screen and (min-width: 1000px) {
         #universe {
           font-size: 73%; }

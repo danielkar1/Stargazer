@@ -30,11 +30,11 @@ class ThreeDstore {
             this.yearCounter[id]+=1
             this.currentPercent[id] = 0;
           }
-          // this.result.innerHTML = this.currentPercent[id];
+         
         }
     return setInterval(() => {
     setimer(id)},  totalDuration);
-      // }, this.animationDuration[id]);     
+       
       }
 
   @action GetCssAtri(id){
@@ -48,7 +48,7 @@ class ThreeDstore {
 
   @action Get(id) {
 
-     this.getAnimeDuration(id)
+    //  this.getAnimeDuration(id)
     function findKeyframesRule(rule) {
       let ss = document.styleSheets;
       for (let i = 1; i < ss.length; ++i) {
@@ -103,7 +103,7 @@ class ThreeDstore {
       // Resets the approximate animation percent counter
       
       ;
-    clearInterval(this.intervalId)
+    
       this.currentPercent[id]=1;
  
     setTimeout(function () {

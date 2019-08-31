@@ -22,16 +22,13 @@ class Planet extends Component {
     let Id = this.props.planetsKeyArr
     return <div id={Id} className={PlanetsStore.Planets[Id]}  >
       <div className="pos"  >
-      {/* <PlanetsInfo planet={Id}/> */}
-        <div className='planet' id={Id} onClick={this.popup} > 
-          {PlanetsStore.Planets[Id]=="planetbig"?<dl className="infos" >
-         <dd> text needs to be in the center</dd></dl>:null}
-        <dd>{ThreeDstore.currentPercent[Id]}%</dd>
+      <div className='planet' id={Id} onClick={this.popup} > 
+         {PlanetsStore.Planets[Id]=="planetbig"?<dl class="infos"><dt><strong>{Id}</strong></dt><dd><dt><PlanetsInfo/></dt></dd></dl>:null}
+      
         </div>
       </div>
       </div>
-      {/* {PlanetsStore.Planets[Id]=="planetbig"?
-         :null} */}
+       
 
 
   }
