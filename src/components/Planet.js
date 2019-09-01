@@ -13,7 +13,7 @@ class Planet extends Component {
   }
   popup = (e) => { 
      PlanetsStore.planetPop(e.currentTarget.id)
-     ThreeDstore.Get(e.currentTarget.id)
+    //  ThreeDstore.Get(e.currentTarget.id)
   }
 
 

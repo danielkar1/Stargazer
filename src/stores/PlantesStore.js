@@ -1,23 +1,30 @@
 import { action, observable } from 'mobx';
 import UserStore from './UserStore'
-
+import ThreeDstore from './ThreeDstore'
 
 
 class PlanetsStore {
   @observable PlanetMode = 'planet';
-  @observable Planets = { 'sun': 'orbit', 'mercury': 'orbit', 'mars': 'orbit', 'uranus': `orbit`, 'earth': `orbit` }
+  @observable Planets = { 'sun': 'orbit', 'mercury': 'orbit', 'mars': 'orbit', 'venus': `orbit`, 'earth': `orbit` }
   @observable CurrentPlanetClicked = '';
   @observable planetsKeyArr = [];
   @observable planetsValueArr = [];
 
   @action planetPop = (e) => {
    
-// if(UserStore.logincompleted==true){
-    if (this.Planets[e] === 'orbit' ){
+    
+    if (this.Planets[e] === 'orbit'){
+      if(e=="sun"){
+        ThreeDstore.Get("dd")
+        // ThreeDstore.sunClicked=false
+      }
       this.Planets[this.CurrentPlanetClicked]='orbit'
       this.Planets[e] = 'planetbig';
 
     } else {
+      if(e=="sun"){
+        ThreeDstore.Get("dd")
+      }
       setTimeout(() => {
         document.getElementById(e).firstChild.classList.remove('pos')
         setTimeout(() => {
@@ -25,14 +32,11 @@ class PlanetsStore {
         }, 10);
         this.Planets[e] = 'orbit'
       }, 40);
-    }
+    } 
+  
     this.CurrentPlanetClicked = e;
-
-  // }
 }
-  @action contentcontainer = (e) => {
-    document.getElementById(e).style.animation = "popup 4s "
-  }
+
 
   //   @action PlanetsRest =()=> {
   //   Object.keys(this.Planets).forEach(key=> {this.Planets[key] = "orbit" });

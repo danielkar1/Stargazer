@@ -8,20 +8,11 @@ import User from './User';
 @observer
 
 class LoginContainer extends Component {
-    // openModul=()=>{
-    //     // this.props.UserStore.login=true;
-    //     this.props.UserStore.ActivatePopup() 
-
-    // }
-
-
+   
     render() {
-        let UserName = this.props.UserStore.userName
-        let UserLastName = this.props.UserStore.userLastName
-        let Planet = this.props.UserStore.userPlanet
-        let isLoginCompleted = this.props.UserStore.logincompleted
+    
         return (
-            <div id='LoginContainer' >
+            <div className='LoginContainer' >
                 <p>
                     Welcome to The solar-system calander
               <span>

@@ -11,15 +11,12 @@ import PlanetsInfo from './PlanetsInfo'
 
 class SolarSystem extends Component{
 
-    // drunkMode = (e) => { 
-      
-    //    this.props.ThreeDstore.Get("orbit")
-    //  }
     
     render(){
            return(
         <div id="solar-system" > 
-            {/* <button onClick={this.drunkMode}>Drunk mode</button> */}
+
+     {this.props.PlanetsStore.CurrentPlanetClicked==''?<div id="welcome">The days and years dervied from the current animation position. A day is a full spin of a planet on its axis and a solar-year its the 360deg orbit around the sun.The time presented is ralative to Earth days and years, On Mars one year is 687 earth days. You can click the planets for more info, watch out from the sun...</div>:null}  
             <Planets/>
            
             </div> 

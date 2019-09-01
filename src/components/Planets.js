@@ -17,13 +17,13 @@ class Planets extends Component {
         this.props.PlanetsStore.getArray()
     }
     render() {
-       
+        
         let planetsKeyArr=this.props.PlanetsStore.planetsKeyArr;
         let planetsValueArr=this.props.PlanetsStore.planetsValueArr;
         return ( 
+      
         planetsKeyArr.map((planet, index) => <Planet planetsKeyArr={planet} planetsValueArr={planetsValueArr[planet]} key={index} />)
-       
-     
+    
         )
 
     }

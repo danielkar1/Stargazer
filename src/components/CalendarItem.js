@@ -16,7 +16,7 @@ class CalendarItem extends Component{
         return (
             <div className='calendaritem'>
                 <span>{planet}</span>
-         <div>{this.props.ThreeDstore.currentPercent[planet]}%</div>
+         <div>{this.props.ThreeDstore.dayCounter[planet]}days</div>
           <div>{this.props.ThreeDstore.yearCounter[planet]}years</div>
           
 

@@ -1,45 +1,15 @@
-/* 
 
-/* html { 
-  background: url(https://zeyeland.com/frontResources/textures/2k_stars.jpg) no-repeat  center fixed; 
-  -webkit-background-size: cover;
-   -moz-background-size: cover;
-  -o-background-size: cover; 
- background-size: cover; 
- font-family: 'Rajdhani', sans-serif;
- font-size: 20px;
- } */
 *{
     box-sizing: border-box;
     font-family: 'Rajdhani', sans-serif;
   
-
-}
-
-.welcome{
-  /* line-height: 2em; */
-  font-family:'Rajdhani', sans-serif;
-  font-size:2em;
-  align-self: flex-start;
-  max-width:100%;
-}
-
-#loginbutton{
-  padding: 0.4em;
-  border: 1px solid whitesmoke;
-}
-
-#loginbutton:active{
-  background-color: #3e8e41;
-  box-shadow: 0 0px #666;
-  transform: translateY(18.2px);
 }
 
 
-#LoginContainer{
+.LoginContainer{
     width: 90vw;
     height: 100vh;
-   font: 400 2vw/1.5 "Neuton";
+   font: 400 2vw/1.5 'Rajdhani', sans-serif;
   color: white;
      text-align: center; 
      margin: 0 
@@ -71,66 +41,62 @@ p {
 	border-width: 4px 0;
 	padding: 1.5em 0em;
 	position: relative;
-	/* top: 18%; */
-	/* left: 75%; */
 	width: 100vw;
 	 margin-left: auto;
 }
   span {
 
-  	font: 700 2em/ "Oswald", sans-serif;
+  	font: 700 2em/ 'Rajdhani', sans-serif;
   	letter-spacing: 0;
   	padding: .25em 0 .325em;
 	  display: block;
 	  margin: 0 auto;
   	text-shadow: 0 0 80px rgba(255,255,255,.5);
-
-/* Clip Background Image */
-
 	  background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
 	  -webkit-background-clip: text;
 	  background-clip: text;
-
-/* Animate Background Image */
-
 	  -webkit-text-fill-color: transparent;
 	  -webkit-animation: aitf 40s linear infinite;
-
-/* Activate hardware acceleration for smoother animations */
-
 	  -webkit-transform: translate3d(0,0,0);
 	  -webkit-backface-visibility: hidden;
 
   }
-
-
-/* Animate Background Image */
-
 @keyframes aitf {
 	0% { background-position: 0% 50%; }
 	100% { background-position: 100% 50%; }
 }
 
+#welcome{
+  color: whitesmoke;
+  top: 2em;
+  align-items: center;
+	letter-spacing: .2em;
+	display: inline-block;
+	border: 4px double rgba(255,255,255,.25);
+	border-width: 4px 0;
+	padding: 0.5em;
+	position: absolute;
+	width: 90vw;
+	 margin-left: auto;
+  
+}
+
 #calendar{
-  display:grid;
-  margin-left: auto;
+  display: grid;
+    padding-left: 0.5em;
     grid-column-gap: 1em;
     opacity: 0.7;
     top: 27em;
-  font-size: 1.2em;
-  
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  /* grid-template-rows: auto;   */
-  /* grid-template-rows: 1fr,1fr; */
-  position: absolute;
-  color: white;
-  width: 80vw;
-  height: 10vh;
+    font-size: 1.2em;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    position: absolute;
+    color: white;
+
 }
 
 .calendaritem >div{
   display: grid;
-  border-bottom: whitesmoke 2px solid;
+  border-bottom: whitesmoke 2px double;
   
   /* border: whitesmoke 2px double; */
 }
@@ -142,7 +108,7 @@ p {
     font-size:  90%; } }
 
     @media screen and (max-width: 600px) {
-       #LoginContainer {
+       .LoginContainer {
         font-size:  150%;
         
       }
