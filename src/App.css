@@ -217,10 +217,7 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
 }
 
 .planetbig .planet {
-  /* position: absolute; */
   transform: scale(1.5);
-  /* transform: translate3d(-3em, -1em, 2px); */
-/* transform: perspective(1px) translateZ(1px);  */
  animation: shadow-uranus linear infinite;
  
  
@@ -268,6 +265,12 @@ animation-duration: 36s;
   color: white;
 }
 
+.precent{
+  position: relative;
+  color: white;
+
+}
+
 .topic:hover{
   background-color:rgb(152, 149, 200);
   cursor:pointer;
@@ -307,7 +310,7 @@ dl.infos:before {
   dl.infos dt {
     position: absolute;
     text-transform: uppercase;
-    left: 50px;
+    left: 40px;
     margin-bottom: 26px;
     bottom: 15px;
     color: #FFF;

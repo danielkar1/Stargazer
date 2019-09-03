@@ -24,10 +24,12 @@ class Planet extends Component {
       <div className="pos"  >
       <div className='planet' id={Id} onClick={this.popup} > 
          {PlanetsStore.Planets[Id]=="planetbig"?<dl class="infos"><dt><strong>{Id}</strong></dt><dd><dt><PlanetsInfo/></dt></dd></dl>:null}
-      
         </div>
+      
       </div>
+    
       </div>
+    
        
 
 

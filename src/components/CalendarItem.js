@@ -16,8 +16,8 @@ class CalendarItem extends Component{
         return (
             <div className='calendaritem'>
                 <span>{planet}</span>
-         <div>{this.props.ThreeDstore.dayCounter[planet]}days</div>
-          <div>{this.props.ThreeDstore.yearCounter[planet]}years</div>
+         <div>{this.props.ThreeDstore.dayCounter[planet]} Days</div>
+          <div>{this.props.ThreeDstore.yearCounter[planet]} Years</div>
           
 
        </div>

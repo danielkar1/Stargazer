@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import Planets from './Planets'
-import '../ContentContainer.css'
+
 
 
 @inject('PlanetsStore')
@@ -20,7 +20,7 @@ class PlanetsInfo extends Component{
            return(
         <div className="planetInfo" > 
           {choosenPlanet==''? this.welcome : this.planetsinfo[choosenPlanet]}
-           
+           <div className="precent">{this.props.ThreeDstore.currentPercent[choosenPlanet]}% </div>
             </div> 
        
            )}

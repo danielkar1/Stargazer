@@ -6,7 +6,7 @@ import { randomBytes } from 'crypto';
 
 class ThreeDstore {
 
-  @observable PlanetlDays={ 'sun': 0, 'mercury': 88, 'mars':687, 'venus':225, 'earth': 364 } 
+  @observable PlanetlDays={ 'sun': null, 'mercury': 88, 'mars':687, 'venus':225, 'earth': 364 } 
   @observable totalCurrentPercent = {  'mercury': 0, 'mars': 0, 'venus': 0, 'earth': 0 };
   @observable yearCounter= { 'mercury': 0, 'mars': 0, 'venus': 0, 'earth': 0 };
   @observable dayCounter= { 'mercury': 0, 'mars': 0, 'venus': 0, 'earth': 0 }
@@ -92,10 +92,10 @@ class ThreeDstore {
         keyframes.deleteRule(keyframeString[i]);
       }
      
-      var multiplier =firstPercent;
+      var multiplier =firstPercent*3.6;
 if(this.sunClicked){
   console.log(this.sunClicked)
-      keyframes.appendRule("0% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5)");
+      // keyframes.appendRule("0% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5)");
       keyframes.appendRule("0% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 0) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 0) + "deg);}");
   keyframes.appendRule("13% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 45) + "deg)  rotate(" + (multiplier + 45) + "deg); }");
   keyframes.appendRule("25% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 90) + "deg)  rotate(" + (multiplier + 90) + "deg); }");
