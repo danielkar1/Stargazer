@@ -16,7 +16,7 @@ class SolarSystem extends Component{
         
             <Planets/>
      {this.props.PlanetsStore.CurrentPlanetClicked==''?<div id="welcome">
-     <span>"The Calander below follows the Animation in real-time and calculates the years and days on each planet relative to Earth</span>
+    "The Calander below follows the Animation in real-time and calculates the years and days on each planet relative to Earth
      </div>:null}  
            
             </div> 

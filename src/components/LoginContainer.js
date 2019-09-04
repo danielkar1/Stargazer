@@ -21,7 +21,7 @@ class LoginContainer extends Component {
                        and the planets info.
              </span>
                     &mdash; please press the SUN to begin &mdash;
-</p>
+</p >
                 <div id="enter">
                     <div id="sun" className="orbit" onClick={this.props.UserStore.ActivatePopup} >
                         <div className='planet' id="sun" >
