@@ -45,7 +45,7 @@ html {
   position:absolute;
   border-radius: 225px;
   background-color: #202020; 
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   margin: auto;
   font-size: 14px;
    top: 0;
@@ -53,7 +53,7 @@ html {
   left: 0;
   right: 0;
    background-size: cover; 
-  backface-visibility: hidden;
+   transform-style: preserve-3d;
   transition-duration: 0.5s;
    transition-timing-function: ease;
 }
@@ -73,6 +73,9 @@ html {
 
     .pos {
       position: absolute;
+      display: inline-block;
+      perspective: 400px;
+      perspective-origin: 50% 50%;
       top: 50%;
       width: 2em;
       height: 2em;
@@ -154,7 +157,7 @@ width: 1.5em;
 height: 1.5em;
 z-index: 2;
 background-image: url(./images/venusmap.jpg); 
-animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite;
+animation: shadow-uranus 40s linear infinite, spin 40s linear  infinite;
 
 }
 
@@ -163,18 +166,19 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   width: 0.5em;
   height: 0.5em;
   z-index: 3;
-  background-image: url(./images/mercurymap.jpg); 
-  animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite;
+  background-image: url(./images/Mercury_MESSENGER_MDIS_Basemap_MD3Color_Mosaic_Global_1024.jpg); 
+  animation: shadow-uranus 8s linear infinite, spin 15s linear infinite;
 }
 #earth .planet {
    width:3em;
+   display: inline-block;
   height: 3em;
   z-index:4;
   box-shadow: 0px 0 2px 0.1px ;
-  background: url(./images/640px-Earthmap1000x500compac.jpg);
-  background-repeat: space;
+  background: url(./images/ee.jpg)repeat-x;
   background-size: cover;
-  animation: shadow-uranus 30s linear infinite, spin 10s linear alternate infinite;
+  animation: shadow-uranus 36s linear infinite, spin 10s linear  infinite;
+  
 }
 
 #mars .planet {
@@ -182,9 +186,9 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   width:2.5em;
   height: 2.5em;
   box-shadow: 0px 0 2px 0.1px ;
-  background: url(./images/mars_1k_color.jpg);
+  background: url(./images/96k-mars-color-map-3d-model.jpg);
   background-size: cover;
-  animation: shadow-uranus 35s linear infinite, spin 10s linear alternate infinite;
+  animation: shadow-uranus 10s linear infinite, spin 10s linear  infinite;
 }
 
 #sun .planet {
@@ -200,8 +204,8 @@ animation: shadow-uranus 10s linear infinite, spin 15s linear alternate infinite
   overflow: hidden;
   border-radius: 50%;
    box-shadow:  0 0 15px 2px rgb(248, 224, 2); 
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Map_of_the_full_sun.jpg/640px-Map_of_the_full_sun.jpg);
-  animation:sun-aura 1.5s linear alternate infinite,spin 15s linear alternate infinite;
+  background: url(./images/640px-Map_of_the_full_sun.jpg);
+  animation:sun-aura 1.5s linear alternate infinite,spin 35s linear infinite;
   background-size: cover;
 }
 
@@ -334,9 +338,11 @@ dl.infos:before {
 
 @keyframes spin {
 
-to{
-  background-position: 100%;
-}
+  0% {
+    background-position: 200% ; }
+
+  100% {
+    background-position: 0; }
 }
 
 @keyframes popup{
@@ -369,7 +375,7 @@ to{
 }
 
 @keyframes shadow-uranus {
-  0% {
+  /* 0% {
     box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
    }
 
@@ -391,7 +397,31 @@ to{
 
   100% {
     box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
-    } }
+    } */
+    0% {
+      box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  25% {
+      box-shadow: inset 23px -13px 23px rgba(0, 0, 0, 0.5);
+  }
+
+  25.01% {
+      box-shadow: inset -45px -15px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  50% {
+      box-shadow: inset -16px 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  75% {
+      box-shadow: inset -2px 3px 2px rgba(0, 0, 0, 0.5);
+  }
+ 
+  100% {
+      box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);
+  }
+  }
 
 
   @keyframes sun-aura {
