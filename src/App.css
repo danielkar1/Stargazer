@@ -223,7 +223,7 @@ animation: shadow-uranus 40s linear infinite, spin 40s linear  infinite;
 
 .planetbig .planet {
   transform: scale(1.5);
- animation: shadow-uranus linear infinite;
+ /* animation: shadow-uranus linear infinite; */
  
  
 }
