@@ -17,14 +17,17 @@ class PlanetsInfo extends Component{
     
     render(){
       let choosenPlanet=this.props.PlanetsStore.CurrentPlanetClicked 
-           return(
-        <div className="planetInfo" > 
-          {choosenPlanet==''? this.welcome : this.planetsinfo[choosenPlanet]}
-           <div className="precent">{this.props.ThreeDstore.currentPercent[choosenPlanet]}% </div>
-            </div> 
+        //    return(
+        // <div className="planetInfo" > 
+        //   {choosenPlanet==''? this.welcome : this.planetsinfo[choosenPlanet]}
+        //    <div className="precent">{this.props.ThreeDstore.currentPercent[choosenPlanet]}% </div>
+        //     </div> 
        
-           )}
+        //    )}
 
+          return  <div className="planetInfo">
+          {this.planetsinfo[this.props.id]}
+          </div>}
 }
 
 export default PlanetsInfo

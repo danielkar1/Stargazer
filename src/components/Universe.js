@@ -17,10 +17,18 @@ class Universe extends Component {
 
     render() {
         
-        return <div id="universe">
-            {this.props.UserStore.loginpopup? <div>  <Navbar/>  <SolarSystem/> <Calendar/>    </div> : <LoginContainer/>}
-        </div>
+        // return <div id="universe">
+        //     {this.props.UserStore.loginpopup? <div>  <Navbar/>  <SolarSystem/> <Calendar/>    </div> : <LoginContainer/>}
+        // </div>
+        return(
+            <div id="universe">
+                <Navbar/> 
+                 <SolarSystem/> 
+           <Calendar/>
 
+                 
+            </div>
+        )
     }
 
 }

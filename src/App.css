@@ -34,9 +34,9 @@ html {
 #solar-system{
  position: relative; 
  height: 90vh;
- width: 90vw;
- left: 0.8em;
- perspective:45em; 
+ width: 100vw;
+ left: -0.5em;
+ perspective:30em; 
  transform: rotateX(-15deg);
  transform-style: preserve-3d; 
 }
@@ -47,7 +47,7 @@ html {
   background-color: #202020; 
   /* background-repeat: no-repeat; */
   margin: auto;
-  font-size: 14px;
+  /* font-size: 22px; */
    top: 0;
   bottom: 0;
   left: 0;
@@ -66,6 +66,7 @@ html {
   border-radius: 50%;
   font-size: 13px;
   transform-style: preserve-3d;
+ 
   animation: orbit; 
   animation-iteration-count: infinite; 
   animation-timing-function: linear;
@@ -74,8 +75,7 @@ html {
     .pos {
       position: absolute;
       display: inline-block;
-      perspective: 400px;
-      perspective-origin: 50% 50%;
+     
       top: 50%;
       width: 2em;
       height: 2em;
@@ -112,8 +112,6 @@ z-index: 4;
   #mars .pos {
     position: absolute;
     z-index:6;
-   
-    
     } 
 
 #venus.orbit {
@@ -163,8 +161,8 @@ animation: shadow-uranus 40s linear infinite, spin 40s linear  infinite;
 
 #mercury .planet {
   
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.8em;
+  height: 0.8em;
   z-index: 3;
   background-image: url(./images/Mercury_MESSENGER_MDIS_Basemap_MD3Color_Mosaic_Global_1024.jpg); 
   animation: shadow-uranus 8s linear infinite, spin 15s linear infinite;
@@ -192,7 +190,7 @@ animation: shadow-uranus 40s linear infinite, spin 40s linear  infinite;
 }
 
 #sun .planet {
-  position: absolute;;
+ 
   width: 7em;
   height: 7em;
   
@@ -201,7 +199,6 @@ animation: shadow-uranus 40s linear infinite, spin 40s linear  infinite;
   left: 0;
   right: 0;
   margin: auto;
-  overflow: hidden;
   border-radius: 50%;
    box-shadow:  0 0 15px 2px rgb(248, 224, 2); 
   background: url(./images/640px-Map_of_the_full_sun.jpg);
@@ -209,24 +206,11 @@ animation: shadow-uranus 40s linear infinite, spin 40s linear  infinite;
   background-size: cover;
 }
 
+/* .planet:hover{
 
-.planetbig .pos{  
-  position: absolute;
-  padding: 4.2em;
-  top: 1em;
-  left:0em;
-  margin: 2em;
-  margin-top: 3em;
-  animation: linear infinite;  
-  /* transform-origin: 0% 100%; */
-}
+} */
 
-.planetbig .planet {
-  transform: scale(1.5);
- /* animation: shadow-uranus linear infinite; */
- 
- 
-}
+
 
 #mercury .pos,
 #mercury.orbit{
@@ -251,9 +235,70 @@ animation-duration: 36s;
  animation-duration: 10s; 
  /* animation-delay: 0.5s;  */
 }
+
+
+.planetbig{
+  position: relative;
+  margin:1em -1em;
+  padding: 2em;
+  transform: scale(0.8)
+  /* margin-top: 3em; */
+  /* transform: scale(1.5); */
+}
+
+ .planetbig .pos{  
+  position: absolute; 
+  top:0;
+  left:0;
+  bottom:0;
+  margin:auto;
+     animation: linear infinite;
+ }
+  .planetbig .planet{ 
+    position: absolute;
+    top:0;
+    right:-0.85em;
+  left:0;
+  bottom:0;
+  }
+  
+ /* animation-play-state:shadow-uranus paused */
+
+
+/* .planetbig:hover{
+  transform: scale3d(2,2,2)
+} */
+/* .planetbig .planet {
+  position: absolute
+  margin: 2em;
+padding: 4.2em;
+  top: 1em;
+  left:0em;
+  margin: 2em;
+  margin-top: 3em;
+  transform: scale(1.5); */
+ /* animation: shadow-uranus 2s linear infinite; */
+ /* animation-play-state:shadow-uranus paused */
+
+/* #earth.planetbig{
+  animation-duration: 20s;
+   margin: 7em;} */
+
+ /* #earth.planetbig{ */
+  /* animation-duration: 20s; */
+  /* display: block;
+  margin: 10em; */
+/* } */
+/* #mercury.planetbig{
+  animation-duration: 20s
+}
+#sun.planetbig{
+  animation-duration: 20s
+}  */
 .navbar{
   display: flex; 
   font-size: 15px;
+  padding-bottom: 1.4em;
  flex-flow: row;
  flex-wrap: wrap;
  font-family: 'Rajdhani', sans-serif;
@@ -273,7 +318,6 @@ animation-duration: 36s;
 .precent{
   position: relative;
   color: white;
-
 }
 
 .topic:hover{
@@ -315,18 +359,18 @@ dl.infos:before {
   dl.infos dt {
     position: absolute;
     text-transform: uppercase;
-    left: 40px;
-    margin-bottom: 26px;
-    bottom: 15px;
+    left: 5em;
+    margin-bottom: 2em;
+    bottom: 4em;
     color: #FFF;
     font-size: 14px;
     text-shadow: 1px 1px 2px black; }
 
   
   dl.infos dd dt {
-    /* position: absolute; */
+    position: absolute; 
     left: 50px;
-    bottom: -2px;
+    bottom: -0.1px;
     width: 300px;
     color: #FFF;
     font-size: 11px;
@@ -375,29 +419,7 @@ dl.infos:before {
 }
 
 @keyframes shadow-uranus {
-  /* 0% {
-    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
-   }
 
-  25% {
-    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
-  }
-
-  50% {
-    box-shadow: inset 4px 0 2px rgba(0, 0, 0, 0.5);
-     }
-
-  75% {
-    box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5);
-     }
-
-  75.01% {
-    box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);
-    }
-
-  100% {
-    box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);
-    } */
     0% {
       box-shadow: inset 16px 0 5px rgba(0, 0, 0, 0.5);
   }
@@ -434,9 +456,23 @@ dl.infos:before {
    } }
     
 
+   @media screen and (max-width: 500px){
+     .planet
+     {
+       font-size:100%;
+     }
+   }
+   /* @media screen and (max-width: 500px){
+    { 
+      font-size:50%;
+    }
+  }  */
+  /* @media screen and (max-width: 500px) {
+    #solar-system {
+      font-size:39%; } } */
       /* Responsive adjustments */
 
-      @media screen and (max-width: 299px) {
+      /* @media screen and (max-width: 299px) {
         #universe {
           font-size: 93%; } }
       @media screen and (min-width: 300px) {
@@ -457,7 +493,7 @@ dl.infos:before {
     
         @media screen and (min-width: 1300px) {
           #universe {
-            font-size: 100%; } }
+            font-size: 100%; } } */
 
          
     

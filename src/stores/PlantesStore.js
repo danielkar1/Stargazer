@@ -5,36 +5,36 @@ import ThreeDstore from './ThreeDstore'
 
 class PlanetsStore {
   @observable PlanetMode = 'planet';
-  @observable Planets = { 'sun': 'orbit', 'mercury': 'orbit', 'mars': 'orbit', 'venus': `orbit`, 'earth': `orbit` }
+  @observable Planets = { 'sun': 'orbit', 'mercury': 'planetbig', 'mars': 'planetbig', 'venus': `planetbig`, 'earth': `planetbig` }
   @observable CurrentPlanetClicked = '';
   @observable planetsKeyArr = [];
   @observable planetsValueArr = [];
 
   @action planetPop = (e) => {
    
+    //  ThreeDstore.AnimationChange
+    // if(this.CurrentPlanetClicked=="sun"){
+    //   ThreeDstore.Get("dd")
+    // }
     
     if (this.Planets[e] === 'orbit'){
-      if(e=="sun"){
-        ThreeDstore.Get("dd")
-        // ThreeDstore.sunClicked=false
-      }
       this.Planets[this.CurrentPlanetClicked]='orbit'
       this.Planets[e] = 'planetbig';
-
+         
     } else {
-      if(e=="sun"){
-        ThreeDstore.Get("dd")
-      }
       setTimeout(() => {
         document.getElementById(e).firstChild.classList.remove('pos')
+      
         setTimeout(() => {
+          
           document.getElementById(e).firstChild.classList.add('pos')
         }, 10);
-        this.Planets[e] = 'orbit'
       }, 40);
+      this.Planets[e] = 'orbit'
     } 
   
     this.CurrentPlanetClicked = e;
+
 }
 
 
@@ -56,5 +56,6 @@ class PlanetsStore {
   }
 }
 
-export default new PlanetsStore()
+let planetStore=new PlanetsStore()
+export default planetStore;
 

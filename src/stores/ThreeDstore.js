@@ -1,8 +1,8 @@
 import { observer, inject } from 'mobx-react';
 
-import { action, observable, computed, set } from 'mobx';
-import { randomBytes } from 'crypto';
-
+import { action, observable, computed, set, autorun } from 'mobx';
+import PlanetStore from "./PlantesStore"
+import planetStore from './PlantesStore';
 
 class ThreeDstore {
 
@@ -11,9 +11,19 @@ class ThreeDstore {
   @observable yearCounter= { 'mercury': 0, 'mars': 0, 'venus': 0, 'earth': 0 };
   @observable dayCounter= { 'mercury': 0, 'mars': 0, 'venus': 0, 'earth': 0 }
   @observable currentPercent = { 'sun': 0, 'mercury': 0, 'mars': 0, 'venus': 0, 'earth': 0 }
-  @observable sunClicked = true;
+  // @observable sunClicked = false;
   @observable animationDuration={  'mercury': 1, 'mars': 1, 'venus': 1, 'earth': 1 }
   
+ @computed get AnimatoinChange(){
+       console.log(planetStore.Planets["sun"])
+        return this.Get("random")
+ 
+}
+
+
+  // @autorun(()=>{
+  //   return console.log(PlanetStore.Planets["earth"])
+  // })
 
   @action getAnimeDuration=(id)=>{
     let animationDuration=this.GetCssAtri(id).animationDuration
@@ -23,7 +33,7 @@ class ThreeDstore {
     return this.animationDuration[id]
   }
 
-  @action showPercent(id) {
+  @action   showPercent(id) {
     
         let totalDuration = this.getAnimeDuration(id)
         let setimer = (id) => {
@@ -49,7 +59,6 @@ class ThreeDstore {
       let style = getComputedStyle(idStyle)
       return style
   }
-
 
 
   @action Get(id) { 
@@ -93,7 +102,7 @@ class ThreeDstore {
       }
      
       var multiplier =firstPercent*3.6;
-if(this.sunClicked){
+if(PlanetStore.Planets["sun"]=="planetbig"){
   console.log(this.sunClicked)
       // keyframes.appendRule("0% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5)");
       keyframes.appendRule("0% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 0) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 0) + "deg);}");
@@ -105,10 +114,9 @@ if(this.sunClicked){
   keyframes.appendRule("75% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 270) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 270) + "deg); }");
   keyframes.appendRule("88% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 315) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 315) + "deg); }");
   keyframes.appendRule("100% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 360) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 360) + "deg); }");
-  this.sunClicked=false;
+
 }else{
-  console.log(this.sunClicked)
- 
+  
  keyframes.appendRule("0% {box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5)}")
 
  keyframes.appendRule("25% { box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5); }")
@@ -119,7 +127,6 @@ if(this.sunClicked){
 
  keyframes.appendRule("75.01% { box-shadow: inset -24px -20px 15px rgba(0, 0, 0, 0.5);}")
  keyframes.appendRule("100%{ box-shadow: inset -4px 0 2px rgba(0, 0, 0, 0.5);}")
-this.sunClicked=true
 }
 
 
@@ -197,5 +204,5 @@ this.sunClicked=true
 
 }
 
-
-export default new ThreeDstore()
+let animationStore=new ThreeDstore()
+export default animationStore;
