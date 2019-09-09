@@ -18,12 +18,12 @@
 
 .planetInfo{
   position: absolute;
-  margin-top: -4em;
+  margin-top: -3em;
  
   left: 2em;
   width: 28vw;
   height: fit-content;
-  font-size: 1.2em;
+  font-size: 1.5em;
   padding-left: auto;
   color: white;
  

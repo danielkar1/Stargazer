@@ -24,7 +24,7 @@ class Universe extends Component {
             <div id="universe">
                 <Navbar/> 
                  <SolarSystem/> 
-           <Calendar/>
+           {/* <Calendar/> */}
 
                  
             </div>

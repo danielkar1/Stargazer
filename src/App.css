@@ -237,11 +237,11 @@ animation-duration: 36s;
 }
 
 
-.planetbig{
+#universe .planetbig{
   position: relative;
-  margin:1em -1em;
+  margin:0.6em 0em;
   padding: 2em;
-  transform: scale(0.8)
+ transform: scale(0.8) 
   /* margin-top: 3em; */
   /* transform: scale(1.5); */
 }
