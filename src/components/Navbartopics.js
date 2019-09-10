@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import './../LoginContainer.css';
 import ThreeDstore from '../stores/ThreeDstore';
+import planetStore from '../stores/PlantesStore'
 @inject('PlanetsStore','ThreeDstore')
 @observer
 
@@ -9,7 +10,7 @@ class Navbartopics extends Component {
 
     onClick = (e) => {
         let planetClicked = e.currentTarget.innerText;
-        this.props.PlanetsStore.planetPop(planetClicked)
+        planetStore.planetPop(planetClicked)
     }
 
 

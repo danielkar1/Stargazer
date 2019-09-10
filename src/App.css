@@ -237,7 +237,7 @@ animation-duration: 36s;
 }
 
 
-#universe .planetbig{
+.planetbig{
   position: relative;
   margin:0.6em 0em;
   padding: 2em;
@@ -328,7 +328,7 @@ padding: 4.2em;
 
 /* INFO CSS */
 dl.infos {
-  position: fixed;
+  position: relative;
   float:center;
   display: block;
   color: antiquewhite;

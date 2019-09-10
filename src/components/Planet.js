@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import LoginContainer from './LoginContainer';
-import PlanetsStore from './../stores/PlantesStore'
+import planetsStore from './../stores/PlantesStore'
 // import ThreeDstore from './../stores/ThreeDstore'
 import animationStore from '../stores/ThreeDstore'
 import PlanetsInfo from './PlanetsInfo'
+import gameStore from '../stores/gameStore'
+
 @observer
 
 class Planet extends Component {
@@ -13,20 +15,22 @@ class Planet extends Component {
     this.intervalID = 0;
   }
   popup = (e) => {
-    PlanetsStore.planetPop(e.currentTarget.id)
-    //  ThreeDstore.Get(e.currentTarget.id)
+    // console.log(`you clicked on ${e.currentTarget.id}`) //check it out with someone
+    let planetName=e.currentTarget.id
+    planetsStore.planetPop(planetName)
   }
 
 
   render() {
     
-    
     let Id = this.props.planetsKeyArr
-    return <div id={Id} className={PlanetsStore.Planets[Id]}  >
+    console.log(Id)
+    console.log(planetsStore.Planets[Id].position)
+    return <div id={Id} className={planetsStore.Planets[Id].classs}  >
       {animationStore.AnimatoinChange}
       <div className="pos"  >
         <div className='planet' id={Id} onClick={this.popup} >
-          {PlanetsStore.Planets[Id] == "planetbig" ? <dl class="infos"><dt><strong>{Id}</strong></dt><dd><dt><PlanetsInfo id={Id} /></dt></dd></dl> : null}
+          {planetsStore.Planets[Id].classs == "planetbig" ? <dl class="infos"><dt><strong>{Id}</strong></dt><dd><dt><PlanetsInfo id={Id} /></dt></dd></dl> : null}
         </div>
       </div>
 

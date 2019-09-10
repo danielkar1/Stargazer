@@ -15,7 +15,7 @@ class ThreeDstore {
   @observable animationDuration={  'mercury': 1, 'mars': 1, 'venus': 1, 'earth': 1 }
   
  @computed get AnimatoinChange(){
-       console.log(planetStore.Planets["sun"])
+       console.log(planetStore.Planets["sun"].classs)
         return this.Get("random")
  
 }
@@ -102,8 +102,8 @@ class ThreeDstore {
       }
      
       var multiplier =firstPercent*3.6;
-if(PlanetStore.Planets["sun"]=="planetbig"){
-  console.log(this.sunClicked)
+if(planetStore.Planets["sun"].classs=="planetbig"){
+  console.log(planetStore.Planets["sun"].classs)
       // keyframes.appendRule("0% { box-shadow: inset 24px -20px 15px rgba(0, 0, 0, 0.5)");
       keyframes.appendRule("0% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 0) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 0) + "deg);}");
   keyframes.appendRule("13% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 45) + "deg)  rotate(" + (multiplier + 45) + "deg); }");
